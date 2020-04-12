@@ -10,10 +10,35 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "discord.js": "^11.5.1",
+    "fs": "^0.0.2",
+    "quick.db": "^6.3.2",
+    "chalk": "^3.0.0",
+    "moment": "^2.24.0",
+    "util": "^0.12.1",
+    "http": "^0.0.0",
+    "parse-ms": "^2.0.0",
+    "discord-anti-spam": "^2.3.3",
+    "common-tags": "^1.8.0",
+    "crypto": "^1.0.1",
+    "node-superfetch": "^0.1.9",
+    "weather-js": "^2.0.0",
+    "math-expression-evaluator": "^1.2.17",
+    "os": "^0.1.1",
+    "cpu-stats": "^1.0.0",
+    "moment-duration-format": "^2.2.2",
+    "cpu-stat": "^2.0.1",
+    "jimp": "^0.9.3",
+    "figlet": "^1.2.4",
+    "ms": "^2.1.2",
+    "dblapi.js": "^2.3.0",
+    "ytdl-core": "^1.0.6",
+    "simple-youtube-api": "^5.2.1",
+    "node-opus": "^0.3.2"
   },
   "engines": {
-    "node": "12.x"
+    "node": "8.x"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"

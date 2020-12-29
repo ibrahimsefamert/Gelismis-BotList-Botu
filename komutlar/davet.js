@@ -4,7 +4,7 @@ module.exports.run = async (client, message) => {
   
   const embed = new Discord.RichEmbed()
     .setColor("BLACK")
-    .addField(`Botu Ekleyin!`, `Yakında`)
+    .addField(`Botu Ekleyin!`, `[Buraya Tıkla](https://discord.com/api/oauth2/authorize?client_id=793425183691767828&permissions=8&scope=bot)`)
 .setFooter(client.user.username, client.user.avatarURL)
 
   message.channel.send(embed);

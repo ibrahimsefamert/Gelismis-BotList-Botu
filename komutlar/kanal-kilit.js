@@ -4,7 +4,7 @@ const ayarlar = require("../ayarlar.json");
 const db = require("quick.db");
 
 exports.run = async (bot, message, args) => {
-  let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || "?";
+  let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || "i/";
 
   if (!bot.lockit) bot.lockit = [];
   let time = args

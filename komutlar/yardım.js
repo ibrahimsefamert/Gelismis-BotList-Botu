@@ -2,7 +2,7 @@ const Discord = require("discord.js"),
   db = require("quick.db");
 
 exports.run = async (bot, message, args, tools) => {
-  let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || "?";
+  let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || "i/";
   const embed = new Discord.RichEmbed()
     .setDescription(`Bot sürümü; **v0.1**, Prefix: **${prefix}**, Dil: **tr**`)
     .addField(
@@ -15,11 +15,11 @@ exports.run = async (bot, message, args, tools) => {
     )
     .addField(
       `Moderasyon`,
-      `\`ban\`, \`kick\`, \`kanal-kilit\`, \`unban\`, \`mute\`, \`takma-ad\`, \`yavaş-mod\`, \`temizle\``
+      `\`ban\`, \`kick\`, \`kanal-kilit\`, \`unban\`, \`mute\`, \`takma-ad\`, \`temizle\``
     )
     .addField(
       `Sistem`,
-      `\`otorol\`, \`otorol-sıfırla\`, \`otorol-mesaj\`, \`otorol-mesaj-sıfırla\`, \`sayaç\`, \`sayaç-sıfırla\`, \`sayaç-mesaj-hg\`, \`sayaç-mesaj-bb\`, \`ever-engel\`, \`sa-as\`, \`ototag\`, \`ototag-isim\`, \`oto-tag-sıfırla\`, \`hg-bb\``
+      `\`otorol\`, \`otorol-sıfırla\`, \`otorol-mesaj\`, \`otorol-mesaj-sıfırla\`, \`sayaç\`, \`sayaç-sıfırla\`, \`ever-engel\`, \`sa-as\`, \`ototag\`, \`ototag-isim\`, \`oto-tag-sıfırla\`, \`hg-bb\``
     )
     .addField(
       `Sistem2`,

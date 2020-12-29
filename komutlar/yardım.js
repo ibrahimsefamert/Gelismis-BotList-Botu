@@ -4,14 +4,14 @@ const Discord = require("discord.js"),
 exports.run = async (bot, message, args, tools) => {
   let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || "i/";
   const embed = new Discord.RichEmbed()
-    .setDescription(`Bot sürümü; **v0.1**, Prefix: **${prefix}**, Dil: **tr**`)
+    .setDescription(`Bot sürümü; **v1.0**, Prefix: **${prefix}**, Dil: **Türkçe**`)
     .addField(
       `Davetler`,
       `\`davet-kanal\`, \`davet-kanal-sıfırla\`, \`davet-ekle\`, \`davet-sıfırla\`, \`davet-sil\`, \`davet-stokla\`, \`davetlerim\`, \`davet-oluştur\``
     )
     .addField(
       `Bot`,
-      `\`bot-bilgi\`, \`yapımcı\`, \`davet\`, \`üye-durum\`, \`ping\`,\`avatar\`,\`top20\``
+      `\`bot-bilgi\`, \`yapımcı\`, \`davet\`, \`üye-durum\`, \`ping\`, \`avatar\`, \`top20\`, \`davet-oluştur\``
     )
     .addField(
       `Moderasyon`,

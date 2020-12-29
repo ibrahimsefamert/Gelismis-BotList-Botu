@@ -5,12 +5,12 @@ const ayarlar = require("../ayarlar.json");
 var prefix = ayarlar.prefix;
 
 module.exports = async client => {
-  var oyun = ["LYNX İNVİTE"];
+  var oyun = ["AhmetAkdemir"];
 
   setInterval(async () => {
     var random = Math.floor(Math.random() * (oyun.length - 0 + 1) + 0);
 
-    client.user.setActivity(oyun[random], { type: "WATCHING" });
+    client.user.setActivity("AhmetAkdemir | i/yardım", { type: "WATCHING" });
   }, 12000);
   client.user.setStatus("online");
 

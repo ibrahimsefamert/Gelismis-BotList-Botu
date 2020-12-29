@@ -7,11 +7,11 @@ exports.run = async (bot, message, args, tools) => {
     .setDescription(`Bot sürümü; **v1.0**, Prefix: **${prefix}**, Dil: **Türkçe**`)
     .addField(
       `Davetler`,
-      `\`davet-kanal\`, \`davet-kanal-sıfırla\`, \`davet-ekle\`, \`davet-sıfırla\`, \`davet-sil\`, \`davet-stokla\`, \`davetlerim\`, \`davet-oluştur\``
+      `\`davet-kanal\`, \`davet-kanal-sıfırla\`, \`davet-oluştur\`, \`bot-davet\``
     )
     .addField(
       `Bot`,
-      `\`bot-bilgi\`, \`yapımcı\`, \`davet\`, \`üye-durum\`, \`ping\`, \`avatar\`, \`top20\`, \`davet-oluştur\``
+      `\`bot-bilgi\`, \`yapımcı\`,\`üye-durum\`, \`ping\`, \`avatar\`, \`top20\`, \`davet-oluştur\``
     )
     .addField(
       `Moderasyon`,
@@ -19,11 +19,7 @@ exports.run = async (bot, message, args, tools) => {
     )
     .addField(
       `Sistem`,
-      `\`otorol\`, \`otorol-sıfırla\`, \`otorol-mesaj\`, \`otorol-mesaj-sıfırla\`, \`sayaç\`, \`sayaç-sıfırla\`, \`ever-engel\`, \`sa-as\`, \`ototag\`, \`ototag-isim\`, \`oto-tag-sıfırla\`, \`hg-bb\``
-    )
-    .addField(
-      `Sistem2`,
-      `\`kanal-koruma\`, \`kanal-koruma-sıfırla\``
+      `\`otorol\`, \`otorol-sıfırla\`, \`otorol-mesaj\`, \`otorol-mesaj-sıfırla\`, \`sayaç\`, \`sayaç-sıfırla\`, \`ever-engel\`, \`sa-as\`, \`ototag\`, \`ototag-isim\`, \`ototag-sıfırla\`, \`hg-bb\``
     )
 
     .setColor("BLACK")

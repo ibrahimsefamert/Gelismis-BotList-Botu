@@ -25,7 +25,6 @@ module.exports.run = async (bot, message) => {
       `%${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}`,
       true
     )
-    .addField(`Bu Sunucu Premium Mu?`, pre, false)
     .addField(`Destek Sunucusu`, `https://discord.gg/wPCqhkVKMp`, false)
     .addField(`Botu Ekleyin`, `[Buraya Tıkla](https://discord.com/api/oauth2/authorize?client_id=793425183691767828&permissions=8&scope=bot)`, false)
     .setFooter(bot.user.username, bot.user.avatarURL);

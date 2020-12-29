@@ -19,7 +19,7 @@ module.exports.conf = {
 };
 
 module.exports.help = {
-  name: "davet",
-  description: "davet",
-  usage: "davet"
+  name: "bot-davet",
+  description: "bot-davet",
+  usage: "bot-davet"
 };

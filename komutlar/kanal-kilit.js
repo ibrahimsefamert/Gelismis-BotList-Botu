@@ -22,7 +22,7 @@ exports.run = async (bot, message, args) => {
 //0x36393E
       .setColor("BLACK")
       .setDescription(
-        `Örnek:${prefix}kanal-kilit <Süre>\nNot: yazdığınız kanalda bu işlemi yapar!`
+        `Örnek:${prefix} kanal-kilit <Süre>\n**Not: Yazdığınız kanalda bu işlemi yapar!**`
       )
       .setTimestamp()
     .setFooter(bot.user.username, bot.user.avatarURL)

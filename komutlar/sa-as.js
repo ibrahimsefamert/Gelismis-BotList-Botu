@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 
 exports.run = async (client, message, args) => {
-  let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || "?";
+  let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || "i/";
   if (!message.member.hasPermission("BAN_MEMBERS")) {
     const embed = new Discord.RichEmbed()
       .setDescription(`Ne yazık ki bu komutu kullanmaya yetkin yok.`)
@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
     return message.channel.send(
       new Discord.RichEmbed()
         .setTitle("Hatalı kullanım!")
-        .setDescription(`${prefix}sa-as aç && kapat`)
+        .setDescription(`${prefix}sa-as aç veya kapat`)
         .setColor("BLACK")
     );
   if (ee === "aç") {

@@ -489,7 +489,7 @@ client.on("guildMemberAdd", async member => {
     const embed = new Discord.RichEmbed()
       .setColor("BLACK")
       .setDescription(
-        `<a:tik:627830420070727690> - :loudspeaker: **@${member.user.tag}** adlı şahsa rolü verildi! :inbox_tray:`
+        `<a:ballot_box_with_check:627830420070727690> - :loudspeaker: **@${member.user.tag}** adlı şahsa rolü verildi! :inbox_tray:`
       )
       .setFooter(client.user.username, client.user.avatarURL);
     client.channels.get(kanal).send(embed);
@@ -545,7 +545,7 @@ client.on("guildMemberAdd", async member => {
     const embed = new Discord.RichEmbed()
       .setColor("BLACK")
       .setDescription(
-        `<a:tik:627830420070727690> - :loudspeaker: **@${
+        `<a:white_check_mark:627830420070727690> - :loudspeaker: **@${
           member.user.tag
         }** adlı şahsa aramıza katıldı! ${rol} kişi olmamıza ${rol -
           member.guild.memberCount} kişi kaldı! :inbox_tray:`
@@ -583,7 +583,7 @@ client.on("guildMemberAdd", async member => {
     const embed = new Discord.RichEmbed()
       .setColor("BLACK")
       .setDescription(
-        `<a:tik:627830420070727690> - :loudspeaker: **@${member.user.tag}** adlı şahsa tag verildi!`
+        `<a:ballot_box_with_check:627830420070727690> - :loudspeaker: **@${member.user.tag}** adlı şahsa tag verildi!`
       )
       .setFooter(client.user.username, client.user.avatarURL);
     client.channels.get(kanal).send(embed);
@@ -596,7 +596,7 @@ client.on("guildMemberAdd", async member => {
     const embed = new Discord.RichEmbed()
       .setColor("BLACK")
       .setDescription(
-        `<a:tik:627830420070727690> - :loudspeaker: **@${member.user.tag}** adlı şahsa tag verildi!`
+        `<a:ballot_box_with_check:627830420070727690> - :loudspeaker: **@${member.user.tag}** adlı şahsa tag verildi!`
       )
       .setFooter(client.user.username, client.user.avatarURL);
     client.channels.get(kanal).send(embed);
@@ -662,7 +662,7 @@ client.on("guildMemberRemove", async member => {
     const embed = new Discord.RichEmbed()
       .setColor("BLACK")
       .setDescription(
-        `<a:tik:627830420070727690> - :loudspeaker: **@${
+        `<a:negative_squared_cross_mark:627830420070727690> - :loudspeaker: **@${
           member.user.tag
         }** adlı şahsa aramızdan ayrıldı! ${rol} kişi olmamıza ${rol -
           member.guild.memberCount} kişi kaldı! :inbox_tray:`

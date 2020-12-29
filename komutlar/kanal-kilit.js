@@ -60,10 +60,10 @@ exports.run = async (bot, message, args) => {
 
           .setColor("BLACK")
           .setDescription(
-            `Başarıyla olduğunuz kanal kitlendi!\nKilitin açılmasına: ${ms(
+            `Başarıyla olduğunuz kanal kitlendi!\n**Kilidin açılmasına: ${ms(
               ms(time),
               { long: true }
-            )} kadar var!`
+            )} kadar var!**`
           )
           .setTimestamp()
         .setFooter(bot.user.username, bot.user.avatarURL)

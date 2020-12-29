@@ -29,7 +29,7 @@ module.exports.conf = {
 };
 
 module.exports.help = {
-  name: "üye-durum",
-  description: "üye-durum",
-  usage: "üye-durum"
+  name: "üye-say",
+  description: "üye-say",
+  usage: "üye-say"
 };

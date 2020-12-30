@@ -11,7 +11,7 @@ exports.run = async (bot, message, args, tools) => {
     )
     .addField(
       `Bot`,
-      `\`bot-bilgi\`, \`yapımcı\`,\`üye-durum\`, \`ping\`, \`avatar\`, \`top20\`, \`davet-oluştur\``
+      `\`bot-bilgi\`, \`yapımcı\`,\`üye-say\`, \`ping\`, \`avatar\`, \`top20\`, \`davet-oluştur\``
     )
     .addField(
       `Moderasyon`,

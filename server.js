@@ -221,6 +221,7 @@ client.on("message", async message => {
     a === "sa" ||
     a === "selamun aleyküm" ||
     a === "selamın aleyküm" ||
+    a === "selamün aleyküm" ||
     a === "selam" ||
     a === "slm"
   ) {

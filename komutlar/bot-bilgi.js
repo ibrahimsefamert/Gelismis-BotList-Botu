@@ -15,7 +15,7 @@ module.exports.run = async (bot, message) => {
     .format("D [gün], H [saat], m [dakika], s [saniye]");
   const embed = new Discord.RichEmbed()
     .setColor("BLACK")
-    .addField(`Versiyon`, `0.2`, true)
+    .addField(`Versiyon`, `1.0`, true)
     .addField(`Aktiflik Süresi`, duration, true)
     .addField(`Sunucular`, bot.guilds.size.toLocaleString(), true)
     .addField(`Kullanıcılar`, bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString(), true)
@@ -26,7 +26,7 @@ module.exports.run = async (bot, message) => {
       true
     )
     .addField(`Destek Sunucusu`, `https://discord.gg/XQKRreJKZw`, false)
-    .addField(`Botu Ekleyin`, `[Buraya Tıkla](https://discord.com/api/oauth2/authorize?client_id=793779644805021716&permissions=8&scope=bot)`, false)
+    .addField(`Botu Ekleyin`, `[Buraya Tıkla](https://discord.com/api/oauth2/authorize?client_id=793790447545352212&permissions=8&scope=bot)`, false)
     .setFooter(bot.user.username, bot.user.avatarURL);
   message.channel.send(embed);
 };

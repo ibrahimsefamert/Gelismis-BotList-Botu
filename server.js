@@ -230,7 +230,7 @@ client.on("message", async message => {
         .setColor("BLACK")
         .setTitle("Sa-As sistemi!")
         .setDescription(
-          "<a:krstl:645227930208829450> **Aleyküm Selam, Hoşgeldin!**"
+          ":blue_heart: **Aleyküm Selam, Hoşgeldin!**"
         )
         .setFooter(client.user.username, client.user.avatarURL);
 

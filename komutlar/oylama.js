@@ -10,9 +10,9 @@ const Discord = require('discord.js');
      console.log("oylama komutu " + message.author.username + '#' + message.author.discriminator + " tarafından kullanıldı.")
      message.channel.send(
        new Discord.RichEmbed()
-       .setColor("RED")
+       .setColor("BLUE")
        .setTimestamp()
-       .addField(`**Oylama**`, `**${question}**`)).then(function(message) {
+       .addField(`<:oylama:794637878126575638> **Atlantic Code Oylama** <:oylama:794637878126575638>`, `**${question}**`)).then(function(message) {
          message.react('✅');
          message.react('❌');
        });

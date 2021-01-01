@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
-exports.run = (client, message, args) => {
+exports.run = (bot, client, message, args) => {
+  const guildArray = bot.guilds.array()
+  while (guildArray.length) {
   if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(`Bu komutu kullanmak için yeterli izne sahip değilsin.`)
   if (!message.guild) {
   const ozelmesajuyari = new Discord.RichEmbed()
@@ -17,12 +19,13 @@ exports.run = (client, message, args) => {
   if (!user) return message.reply('Kimi uyaracağını yazmalısın.').catch(console.error);
   const embed = new Discord.RichEmbed()
   .setColor(0x29067B)
+  .setTitle('Uyarı!')
   .setTimestamp()
   .addField('Eylem:', 'Uyarı')
   .addField('Kullanıcı:', `${user.tag}`)
   .addField('Yetkili:', `${message.author.username}#${message.author.discriminator}`)
-  .addField('Sebep', reason);
-  .setFooter(bot.user.username, bot.user.avatarURL);
+  .addField('Sebep:', reason)
+  .setFooter(`${bot.user.username}#${bot.user.avatarURL}`);
   guild.channels.get(gmodlog.id).sendEmbed(embed);
 
 };

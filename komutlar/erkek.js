@@ -63,7 +63,8 @@ let embed2 = new Discord.RichEmbed()
 • **Kayıt eden:** ${message.author} \`  { ${message.author.id} }  \` 
 • **{ ${message.author} } Toplam kayıt sayısı =**  \` ${toplam} \` 
 
-• **{    __Toplam Erkek Kaydı =  \` ${erkek} \` Toplam Kız Kaydı= \` ${kız} \`__  }**  
+• **__Toplam Erkek Kaydı =__**  \`${erkek}\`__
+• **__Toplam Kız Kaydı =__**  \`${kız}\`     
 `)
 .setImage('https://i.pinimg.com/originals/af/80/39/af8039261a387be71514bb4c2e5e54b5.gif')
 

@@ -46,7 +46,7 @@ const emb = new Discord.RichEmbed()
 let kız = db.fetch(`kız_${message.author.id}_${message.guild.id}`)
 let erkek = db.fetch(`erkek_${message.author.id}_${message.guild.id}`)
 let toplam = erkek+kız
-message.guild.members.get(kullanıcı.id).setNickname(`${isim} • ${yaş}`)
+message.guild.members.get(kullanıcı.id).setNickname(`${isim} | ${yaş}`)
 message.guild.members.get(kullanıcı.id).addRole(erkekROL)
   message.guild.members.get(kullanıcı.id).addRole(kayıtlıROL)
 message.guild.members.get(kullanıcı.id).removeRole(kayıtsızROL)

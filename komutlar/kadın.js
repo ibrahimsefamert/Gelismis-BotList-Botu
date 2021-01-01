@@ -5,7 +5,7 @@ const ayarlar = require('../ayarlar.json')
 
 exports.run = async (client, message, args) => {//splashen
 
-    let erkekROL = ayarlar.erkekROL 
+    let kadınROL = ayarlar.kadınROL 
     let kayıtsızROL = ayarlar.kayıtsızROL
     let kayıtlıROL = ayarlar.kayıtlıROL
     let yetkili = ayarlar.yetkiliROL
@@ -36,7 +36,7 @@ if(isim.length > 16) return message.channel.send(`Daha kısa bir isim yaz.`)
 let yaş = args[2];
 if(!yaş) return message.channel.send(`Üyenin yaşını belirtmelisin.`)
 if(yaş.length > 100) return message.channel.send(`Üyenin yaşı 100'den büyük olamaz.`)
-  
+
 const emb = new Discord.RichEmbed()
 .setAuthor(client.user.username, client.user.avatarURL)
 .setThumbnail(client.user.avatarURL)
@@ -46,18 +46,18 @@ const emb = new Discord.RichEmbed()
 let kız = db.fetch(`kız_${message.author.id}_${message.guild.id}`)
 let erkek = db.fetch(`erkek_${message.author.id}_${message.guild.id}`)
 let toplam = erkek+kız
-message.guild.members.get(kullanıcı.id).setNickname(`${isim} • ${yaş}`)
-message.guild.members.get(kullanıcı.id).addRole(erkekROL)
+message.guild.members.get(kullanıcı.id).setNickname(`${isim} | ${yaş}`)
+message.guild.members.get(kullanıcı.id).addRole(kadınROL)
   message.guild.members.get(kullanıcı.id).addRole(kayıtlıROL)
 message.guild.members.get(kullanıcı.id).removeRole(kayıtsızROL)
 message.guild.members.get(kullanıcı.id).send(emb.setDescription(`• Kaydın başarıyla ${message.author} tarafından yapıldı. \n • Sunucudaki İsmin : ${isim} • ${yaş} \n • Kurallar kanalımızı okumayı unutma!`))
-  db.add(`erkek_${message.author.id}_${message.guild.id}`, "1")
+  db.add(`kız_${message.author.id}_${message.guild.id}`, "1")
 let embed2 = new Discord.RichEmbed()
 .setTitle(`• Bir Kullanıcı Kayıt Oldu.`)
 .setDescription(`
 • **Kayıt Olan Kullanıcı:** ${kullanıcı} \`  { ${kullanıcı.id} }  \` 
 • **İsim Yaş:** \` ${isim} | ${yaş} \`
-• **Verilen Rol:** <@&${erkekROL}> \`  { ${erkekROL} }  \` 
+• **Verilen Rol:** <@&${kadınROL}> \`  { ${kadınROL} }  \` 
 • **Bu Hesap:** \`  { ${kontrol} }  \` 
 • **Sunucumuz şu an** \` ${message.guild.members.size} \`** kişi **
 • **Kayıt eden:** ${message.author} \`  { ${message.author.id} }  \` 
@@ -75,7 +75,7 @@ let embed3 = new Discord.RichEmbed()
 .setDescription(`
 • **Kayıt Olan Kullanıcı:** ${kullanıcı} \`  { ${kullanıcı.id} }  \` 
 • **İsim Yaş:** \` ${isim} | ${yaş} \`
-• **Verilen Rol:** <@&${erkekROL}> \`  { ${erkekROL} }  \` 
+• **Verilen Rol:** <@&${kadınROL}> \`  { ${kadınROL} }  \` 
 • **Bu Hesap:** \`  { ${kontrol} }  \` 
 • **Sunucumuz şu an**  \` ${message.guild.members.size} \`** kişi **
 • **Kayıt eden:** ${message.author} \`  { ${message.author.id} }  \` 
@@ -89,10 +89,10 @@ message.channel.send(embed3)
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['e'],
+  aliases: ['k'],
   permLevel: 0
 };
 
 exports.help = {
-  name: 'erkek'
+  name: 'kadın'
 }//splashen

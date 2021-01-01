@@ -4,6 +4,7 @@ module.exports.run = async (client, message) => {
   let üyesayi = message.guild.memberCount;
     let botlar = message.guild.members.filter(m => m.user.bot).size;
     let kullanıcılar = üyesayi - botlar;
+    let tag = 'ahmettt'
   const embed = new Discord.RichEmbed()
     .setColor("BLACK")
     .addField(`Toplam Kişi`, üyesayi, true)
@@ -13,7 +14,7 @@ module.exports.run = async (client, message) => {
   .addField(`Boşta Üyeler`, `${message.guild.members.filter(i => i.presence.status === 'idle').size} <a:crescent_moon:698820288707690566>`, true)
   .addField(`Rahatsız Moddaki Üyeler`, `${message.guild.members.filter(dnd => dnd.presence.status === 'dnd').size} <a:crossed_swords:698819739744600124>`, true)
   .addField(`Çevrimdışı Üyeler`, `${message.guild.members.filter(off => off.presence.status === 'offline').size} <a:mute:698820700651388958>`, true)
-  
+  .addField(`Tagdaki Üyeler`, `${message.guild.members.filter(m => m.user.username.includes(tag)).size} <a:blue_heart:794569638683082773>`, true) 
   
 .setFooter(client.user.username, client.user.avatarURL)
 
@@ -29,7 +30,7 @@ module.exports.conf = {
 };
 
 module.exports.help = {
-  name: "üye-say",
-  description: "üye-say",
-  usage: "üye-say"
+  name: "say",
+  description: "say",
+  usage: "say"
 };

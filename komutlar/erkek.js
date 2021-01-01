@@ -45,7 +45,6 @@ const emb = new Discord.RichEmbed()
 .setFooter(`Kayıt Başarılı`)
 let kız = db.fetch(`kız_${message.author.id}_${message.guild.id}`)
 let erkek = db.fetch(`erkek_${message.author.id}_${message.guild.id}`)
-let toplam = erkek+kız
 message.guild.members.get(kullanıcı.id).setNickname(`${isim} | ${yaş}`)
 message.guild.members.get(kullanıcı.id).addRole(erkekROL)
   message.guild.members.get(kullanıcı.id).addRole(kayıtlıROL)
@@ -55,16 +54,12 @@ message.guild.members.get(kullanıcı.id).send(emb.setDescription(`• Kaydın b
 let embed2 = new Discord.RichEmbed()
 .setTitle(`• Bir Kullanıcı Kayıt Oldu.`)
 .setDescription(`
-• **Kayıt Olan Kullanıcı:** ${kullanıcı} \`  { ${kullanıcı.id} }  \` 
+• **Kayıt Olan Kullanıcı:** ${kullanıcı} \`
 • **İsim Yaş:** \` ${isim} | ${yaş} \`
-• **Verilen Rol:** <@&${erkekROL}> \`  { ${erkekROL} }  \` 
-• **Bu Hesap:** \`  { ${kontrol} }  \` 
+• **Verilen Rol:** <@&${erkekROL}> \`
+• **Bu Hesap:** \`  { ${kontrol} }  \`
 • **Sunucumuz şu an** \` ${message.guild.members.size} \`** kişi **
-• **Kayıt eden:** ${message.author} \`  { ${message.author.id} }  \` 
-• **{ ${message.author} } Toplam kayıt sayısı =**  \` ${toplam} \` 
-
-• **__Toplam Erkek Kaydı =__**  \`${erkek}\`__
-• **__Toplam Kız Kaydı =__**  \`${kız}\`     
+• **Kayıt eden:** ${message.author} \`  
 `)
 .setImage('https://i.pinimg.com/originals/af/80/39/af8039261a387be71514bb4c2e5e54b5.gif')
 

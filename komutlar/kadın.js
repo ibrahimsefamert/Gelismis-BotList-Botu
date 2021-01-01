@@ -45,28 +45,23 @@ const emb = new Discord.RichEmbed()
 .setFooter(`Kayıt Başarılı`)
 let kız = db.fetch(`kız_${message.author.id}_${message.guild.id}`)
 let erkek = db.fetch(`erkek_${message.author.id}_${message.guild.id}`)
-let toplam = erkek+kız
 message.guild.members.get(kullanıcı.id).setNickname(`${isim} | ${yaş}`)
 message.guild.members.get(kullanıcı.id).addRole(kadınROL)
-  message.guild.members.get(kullanıcı.id).addRole(kayıtlıROL)
+message.guild.members.get(kullanıcı.id).addRole(kayıtlıROL)
 message.guild.members.get(kullanıcı.id).removeRole(kayıtsızROL)
 message.guild.members.get(kullanıcı.id).send(emb.setDescription(`• Kaydın başarıyla ${message.author} tarafından yapıldı. \n • Sunucudaki İsmin : ${isim} • ${yaş} \n • Kurallar kanalımızı okumayı unutma!`))
   db.add(`kız_${message.author.id}_${message.guild.id}`, "1")
 let embed2 = new Discord.RichEmbed()
 .setTitle(`• Bir Kullanıcı Kayıt Oldu.`)
 .setDescription(`
-• **Kayıt Olan Kullanıcı:** ${kullanıcı} \`  { ${kullanıcı.id} }  \` 
+• **Kayıt Olan Kullanıcı:** ${kullanıcı} \`
 • **İsim Yaş:** \` ${isim} | ${yaş} \`
-• **Verilen Rol:** <@&${kadınROL}> \`  { ${kadınROL} }  \` 
-• **Bu Hesap:** \`  { ${kontrol} }  \` 
+• **Verilen Rol:** <@&${kadınROL}> \`
+• **Bu Hesap:** \`  { ${kontrol} }  \`
 • **Sunucumuz şu an** \` ${message.guild.members.size} \`** kişi **
-• **Kayıt eden:** ${message.author} \`  { ${message.author.id} }  \` 
-• **{ ${message.author} } Toplam kayıt sayısı =**  \` ${toplam} \` 
-
-• **{    __Toplam Erkek Kaydı =  \` ${erkek} \` Toplam Kız Kaydı= \` ${kız} \`__  }**  
+• **Kayıt eden:** ${message.author} \`  
 `)
 .setImage('https://i.pinimg.com/originals/af/80/39/af8039261a387be71514bb4c2e5e54b5.gif')
-
 
 
 client.channels.get(ayarlar.kayıtLOG).send(embed2)

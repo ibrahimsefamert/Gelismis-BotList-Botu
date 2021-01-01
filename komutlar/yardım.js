@@ -17,6 +17,9 @@ exports.run = async (bot, message, args, tools) => {
       `Moderasyon`,
       `\`ban\`, \`kick\`, \`kanal-kilit\`, \`unban\`, \`mute\`, \`takma-ad\`, \`sil\`, \`yaz\`, \`uyar\``
     )
+    
+    
+  
     .addField(
       `Sistem`,
       `\`otorol\`, \`otorol-sıfırla\`, \`otorol-mesaj\`, \`otorol-mesaj-sıfırla\`, \`sayaç\`, \`sayaç-sıfırla\`, \`ever-engel\`, \`sa-as\`, \`ototag\`, \`ototag-isim\`, \`ototag-sıfırla\`, \`hg-bb\``

@@ -15,11 +15,12 @@ exports.run = async (bot, message, args, tools) => {
     )
     .addField(
       `Moderasyon`,
-      `\`ban\`, \`kick\`, \`kanal-kilit\`, \`unban\`, \`mute\`, \`takma-ad\`, \`sil\`, \`yaz\`, \`uyar\``
+      `\`ban\`, \`kick\`, \`kanal-kilit\`, \`unban\`, \`mute\`, \`takma-ad\`, \`sil\`, \`yaz\`, \`uyar\`, \`reklam-taraması\``
     )
-    
-    
-  
+    .addField(
+      `Kayıt`,
+      `\` erkek (e) \`, \` kadın (k) \``
+      )
     .addField(
       `Sistem`,
       `\`otorol\`, \`otorol-sıfırla\`, \`otorol-mesaj\`, \`otorol-mesaj-sıfırla\`, \`sayaç\`, \`sayaç-sıfırla\`, \`ever-engel\`, \`sa-as\`, \`ototag\`, \`ototag-isim\`, \`ototag-sıfırla\`, \`hg-bb\``

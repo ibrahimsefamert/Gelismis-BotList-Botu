@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
     message.delete();
     const embed = new Discord.RichEmbed()
     .setAuthor('')
-    .setColor('BLACK')
+    .setColor('RANDOM')
     .setDescription(`${mesaj}`)
     return message.channel.sendEmbed(embed);
 }; 

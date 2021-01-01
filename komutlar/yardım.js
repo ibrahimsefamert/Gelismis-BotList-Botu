@@ -15,7 +15,7 @@ exports.run = async (bot, message, args, tools) => {
     )
     .addField(
       `Moderasyon`,
-      `\`ban\`, \`kick\`, \`kanal-kilit\`, \`unban\`, \`mute\`, \`takma-ad\`, \`sil\`, \`yaz\``
+      `\`ban\`, \`kick\`, \`kanal-kilit\`, \`unban\`, \`mute\`, \`takma-ad\`, \`sil\`, \`yaz\`, \`uyar\``
     )
     .addField(
       `Sistem`,

@@ -1,7 +1,5 @@
 const Discord = require('discord.js');
-exports.run = (bot, client, message, args) => {
-  const guildArray = bot.guilds.array()
-  while (guildArray.length) {
+exports.run = (client, message, args) => {
   if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(`Bu komutu kullanmak için yeterli izne sahip değilsin.`)
   if (!message.guild) {
   const ozelmesajuyari = new Discord.RichEmbed()
@@ -14,19 +12,19 @@ exports.run = (bot, client, message, args) => {
   let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first() || client.users.get(args[0]) //eğer etiket yoksa bize girdiğimiz id'den kullanıcıyı buldurur
   let gmodlog = guild.channels.find('name', 'uyarı-log');
-  if (!gmodlog) return message.reply('`uyarı-log` kanalını bulamıyorum.');
+  if (!gmodlog) return message.reply('`uyar-log` kanalını bulamıyorum.');
   if (reason.length < 1) return message.reply('Uyarı sebebini yazmalısın.');
   if (!user) return message.reply('Kimi uyaracağını yazmalısın.').catch(console.error);
   const embed = new Discord.RichEmbed()
   .setColor(0x29067B)
-  .setTitle('Uyarı!')
+  .setTitle(':warning: Yeni Uyarı :warning:')
   .setTimestamp()
   .addField('Eylem:', 'Uyarı')
   .addField('Kullanıcı:', `${user.tag}`)
   .addField('Yetkili:', `${message.author.username}#${message.author.discriminator}`)
   .addField('Sebep:', reason)
-  .setFooter(`${bot.user.username}#${bot.user.avatarURL}`);
-  guild.channels.get(gmodlog.id).sendEmbed(embed);
+  .setFooter(client.user.username, client.user.avatarURL);
+  guild.channels.get(gmodlog.id);
 
 };
 

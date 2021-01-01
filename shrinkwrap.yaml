@@ -7,6 +7,7 @@ dependencies:
   dblapi.js: 2.3.0
   discord-anti-spam: 2.3.3
   discord.js: 11.6.4
+  discord.js-commando: 0.10.0
   express: 4.17.1
   figlet: 1.2.4
   fs: 0.0.2
@@ -744,6 +745,19 @@ packages:
     dev: false
     resolution:
       integrity: sha512-/sqOaRvNXYTM3UfaMc1R4ZWUPEEqV6MoDPDz8ahPUTajFlDaqMSH9M4MEFwB8zTiKK80rElMyR1m3BnSOY6Wiw==
+  /discord.js-commando/0.10.0:
+    dependencies:
+      common-tags: 1.8.0
+      escape-string-regexp: 1.0.5
+      require-all: 2.2.0
+    dev: false
+    engines:
+      node: '>=7.6.0'
+    peerDependencies:
+      discord.js: ^11.2.0
+      sqlite: ^2.0.0
+    resolution:
+      integrity: sha1-v6mL8zEIcDdvPHoNe3Nqaj5dCg8=
   /discord.js/11.5.1:
     dependencies:
       long: 4.0.0
@@ -874,6 +888,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
+  /escape-string-regexp/1.0.5:
+    dev: false
+    engines:
+      node: '>=0.8.0'
+    resolution:
+      integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
   /etag/1.8.1:
     dev: false
     engines:
@@ -1680,6 +1700,10 @@ packages:
       node: '>= 4'
     resolution:
       integrity: sha512-NAqBSrijGLZdM0WZNsInLJpkJokL72XYjUpnB0iwsRgxh7dB6COrHnTBNwN0E+lHDAJzu7kLAkDeY08z2/A0hg==
+  /require-all/2.2.0:
+    dev: false
+    resolution:
+      integrity: sha1-tEIMIzrAKC0P9Jsnf7iAqLXeCJQ=
   /safe-buffer/5.1.2:
     dev: false
     resolution:
@@ -2060,6 +2084,7 @@ specifiers:
   dblapi.js: ^2.3.0
   discord-anti-spam: ^2.3.3
   discord.js: ^11.5.1
+  discord.js-commando: ^0.10.0
   express: ^4.17.1
   figlet: ^1.2.4
   fs: ^0.0.2

@@ -688,6 +688,8 @@ client.on("guildMemberRemove", async member => {
 });
 
 
+
+
 client.on("guildCreate", async guild => {
   const embed = new Discord.RichEmbed()
     .setColor(`GREEN`)

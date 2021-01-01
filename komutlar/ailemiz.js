@@ -6,7 +6,7 @@ exports.run = (bot, message) => {
     const guilds = guildArray.splice(0,25);
     for (const guild of guilds) {
       embed.addField(`**${guild.name}** - ÜYE SAYISI : **${guild.memberCount}**`);
-      embed.addField(`Sunucu ID:  **${guild.id}**`)
+      embed.addField(`Sunucu ID:  **${guild.id}**`);
       embed.setColor('BLACK')
       embed.setTitle('Ailemiz;')
       embed.setDescription(`Büyük bir ailedeyiz !. Ailemde **${bot.guilds.size}** kadar sunucu var !`)
@@ -18,9 +18,9 @@ exports.run = (bot, message) => {
 
 exports.conf = {
   enabled: true,
-  guildOnly: true,
+  guildOnly: false,
   aliases: ['ailemiz'],
-  permLevel: 4
+  permLevel: 0
 };
 
 exports.help = {

@@ -9,7 +9,7 @@ app.get("/", (request, response) => {
 });
 app.listen(8000);
 setInterval(() => {
-  http.get(`https://asfgew.glitch.me/`);//Buraya glitch linkinizi doğru şekilde giriniz. ve Botunuz 7/24 olacaktır!
+  http.get(``);//Buraya glitch linkinizi doğru şekilde giriniz. ve Botunuz 7/24 olacaktır!
 }, 280000)
 
 
@@ -617,7 +617,7 @@ client.on("message", async message => {
         const embed = new Discord.RichEmbed()
           .setColor("BLACK")
           .setDescription(
-            "Bu 1. uyarın! Lütfen tekrarlama! Aksi taktirde atılacaksın!\n(1/3)"
+            "**Bu 1. uyarın! Lütfen tekrarlama! Aksi taktirde atılacaksın!**\n(1/3)"
           )
           .setFooter(client.user.username, client.user.avatarURL);
         message.channel.send(embed);
@@ -628,7 +628,7 @@ client.on("message", async message => {
         const embed = new Discord.RichEmbed()
           .setColor("BLACK")
           .setDescription(
-            "Bu 2. uyarın! Lütfen tekrarlama! Aksi taktirde atılacaksın!\n(2/3)"
+            "**Bu 2. uyarın! Lütfen tekrarlama! Aksi taktirde atılacaksın!**\n(2/3)"
           )
           .setFooter(client.user.username, client.user.avatarURL);
         message.channel.send(embed);
@@ -639,7 +639,7 @@ client.on("message", async message => {
         message.delete();
         const embed = new Discord.RichEmbed()
           .setColor("BLACK")
-          .setDescription("Sunucudan atılıyorsun!")
+          .setDescription("**Sunucudan atılıyorsun!**")
           .setFooter(client.user.username, client.user.avatarURL);
         message.channel.send(embed);
         db.delete(`sayi_${message.author.id}`);

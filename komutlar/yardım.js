@@ -11,11 +11,11 @@ exports.run = async (bot, message, args, tools) => {
     )
     .addField(
       `Bot`,
-      `\`bot-bilgi\`, \`yapımcı\`,\`üye-say\`, \`ping\`, \`avatar\`, \`top20\`, \`davet-oluştur\, \`ailemiz\` `
+      `\`bot-bilgi\`, \`yapımcı\`,\`üye-say\`, \`ping\`, \`avatar\`, \`top20\`, \`davet-oluştur\`, \`ailemiz\``
     )
     .addField(
       `Moderasyon`,
-      `\`ban\`, \`kick\`, \`kanal-kilit\`, \`unban\`, \`mute\`, \`takma-ad\`, \`temizle\, \`yaz\` `
+      `\`ban\`, \`kick\`, \`kanal-kilit\`, \`unban\`, \`mute\`, \`takma-ad\`, \`sil\`, \`yaz\``
     )
     .addField(
       `Sistem`,

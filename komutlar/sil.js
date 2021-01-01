@@ -41,12 +41,12 @@ exports.run = function(client, message, args) {
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ["sil"],
+  aliases: ["sil", "temizle"],
   permLevel: 0
 };
 
 exports.help = {
-  name: "temizle",
-  description: "temizle",
-  usage: "temizle"
+  name: "sil",
+  description: "sil",
+  usage: "sil"
 };

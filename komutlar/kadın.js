@@ -56,10 +56,10 @@ let embed2 = new Discord.RichEmbed()
 .setDescription(`
 • **Kayıt Olan Kullanıcı:** ${kullanıcı}
 • **İsim Yaş:** \` ${isim} | ${yaş} \`
-• **Verilen Rol:** <@&${kadınROL}> \`
+• **Verilen Rol:** \` <@&${kadınROL}> \`
 • **Bu Hesap:** \`  { ${kontrol} }  \`
-• **Sunucumuz şu an** \` ${message.guild.members.size} \`** kişi **
-• **Kayıt eden:** ${message.author}  
+• **Sunucumuz şu an** \` ${message.guild.members.size} \` ** kişi **
+• **Kayıt eden:** \` ${message.author} \`   
 `)
 .setImage('https://i.pinimg.com/originals/af/80/39/af8039261a387be71514bb4c2e5e54b5.gif')
 
@@ -70,10 +70,10 @@ let embed3 = new Discord.RichEmbed()
 .setDescription(`
 • **Kayıt Olan Kullanıcı:** ${kullanıcı}
 • **İsim Yaş:** \` ${isim} | ${yaş} \`
-• **Verilen Rol:** <@&${kadınROL}> \`
+• **Verilen Rol:** \` <@${kadınROL}> \`
 • **Bu Hesap:** \`  { ${kontrol} }  \`
-• **Sunucumuz şu an** \` ${message.guild.members.size} \`** kişi **
-• **Kayıt eden:** ${message.author}    
+• **Sunucumuz şu an** \` ${message.guild.members.size} \` ** kişi **
+• **Kayıt eden:** \` ${message.author} \`   
 `)
 .setImage('https://i.pinimg.com/originals/af/80/39/af8039261a387be71514bb4c2e5e54b5.gif')
 message.channel.send(embed3)

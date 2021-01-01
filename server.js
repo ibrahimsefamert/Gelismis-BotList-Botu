@@ -223,19 +223,19 @@ client.on("message", async message => {
     a === "selamın aleyküm" ||
     a === "selamün aleyküm" ||
     a === "selam" ||
+    a === "sea" ||
     a === "slm"
   ) {
     let i = await db.fetch(`saas_${message.guild.id}`);
     if (i === "acik") {
       const embed = new Discord.RichEmbed()
-        .setColor("BLACK")
-        .setTitle("Sa-As sistemi!")
+        .setColor("RANDOM")
         .setDescription(
           "<a:gul:794639948409339914> **Aleyküm Selam, Hoşgeldin!**"
         )
         .setFooter(client.user.username, client.user.avatarURL);
 
-      message.channel.send(embed).then(msg => msg.delete(5000));
+      message.channel.send(embed).then(msg => msg.delete(10000));
     }
   }
 });

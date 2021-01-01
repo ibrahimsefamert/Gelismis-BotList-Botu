@@ -55,11 +55,10 @@ let embed2 = new Discord.RichEmbed()
 .setTitle(`• Bir Kullanıcı Kayıt Oldu.`)
 .setDescription(`
 • **Kayıt Olan Kullanıcı:** ${kullanıcı}
-• **İsim Yaş:** \` ${isim} | ${yaş} \`
-• **Verilen Rol:** <@${erkekROL}> \`
-• **Bu Hesap:** \`  { ${kontrol} }  \`
-• **Sunucumuz şu an** \` ${message.guild.members.size} \` ** kişi **
-• **Kayıt eden:** \` ${message.author} \`    
+• **İsim Yaş:** ${isim} | ${yaş}
+• **Bu Hesap:** ${kontrol}
+• **Sunucumuz şu an** ${message.guild.members.size}** kişi **
+• **Kayıt eden:** ${message.author}
 `)
 .setImage('https://i.pinimg.com/originals/af/80/39/af8039261a387be71514bb4c2e5e54b5.gif')
 
@@ -67,14 +66,13 @@ let embed2 = new Discord.RichEmbed()
 
 client.channels.get(ayarlar.kayıtLOG).send(embed2)
 let embed3 = new Discord.RichEmbed()
-.setTitle(`• Kayıt Başarıyla Tamamlandı!.`)
+.setTitle(`• Kayıt Başarıyla Tamamlandı!`)
 .setDescription(`
 • **Kayıt Olan Kullanıcı:** ${kullanıcı}
-• **İsim Yaş:** \` ${isim} | ${yaş} \`
-• **Verilen Rol:** <@${erkekROL}> \`
-• **Bu Hesap:** \`  { ${kontrol} }  \`
-• **Sunucumuz şu an** \` ${message.guild.members.size} \` ** kişi **
-• **Kayıt eden:** \` ${message.author} \`   
+• **İsim Yaş:** ${isim} | ${yaş}
+• **Bu Hesap:** ${kontrol}
+• **Sunucumuz şu an** ${message.guild.members.size}** kişi **
+• **Kayıt eden:** ${message.author}
 `)
 .setImage('https://i.pinimg.com/originals/af/80/39/af8039261a387be71514bb4c2e5e54b5.gif')
 message.channel.send(embed3)

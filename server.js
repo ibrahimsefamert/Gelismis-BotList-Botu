@@ -693,7 +693,7 @@ client.on('ready', () => {
     client.user.setStatus('available')
     client.user.setPresence({
         game: {
-            name: '🎄 Atlantic Code ™',
+            name: '🎄 Atlantic Code & BotList ™',
             type: "STREAMING",
             url: "https://www.twitch.tv/sefamert60"
         }

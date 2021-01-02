@@ -6,18 +6,20 @@ exports.run = (client, message, args) => {
     message.delete();
     const embed = new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setDescription(`${mesaj} `)
+     .setTitle('**')
+    .setDescription(`\`\`\`js${mesaj}\`\`\``)
+    .setFooter("Atlantic Code™ | Kod Paylaşım")
     return message.channel.sendEmbed(embed);
 }; 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['yaz', 'y'],
+  aliases: ['k', 'kodpaylaş'],
   permLevel: 0
 };
 
 exports.help = {
-  name: "yaz",
+  name: "kod",
   description: "Bot yazı yazar.",
   usage: "yaz"
 }; 

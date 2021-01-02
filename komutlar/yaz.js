@@ -1,14 +1,16 @@
 const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
-    let mesaj = args.slice(0).join(' ');
-    if (mesaj.length < 1) return message.reply('Yazmam İçin Birşey Yazmalısın!');
+    let kod = args.slice(0).join(' ');
+    if (kod.length < 1) return message.reply('L');
     message.delete();
     const embed = new Discord.RichEmbed()
+    .addField("ASD", "ASASD")
     .setColor('RANDOM')
-     .setTitle('**')
-    .setDescription(`\`\`\`js${mesaj}\`\`\``)
-    .setFooter("Atlantic Code™ | Kod Paylaşım")
+     .setTitle('**<a:tr:794638011320107008> Atlantic Code ™ İyi Kodlamalar Diler | Developed By Sefa MERT <a:tr:794638011320107008>**')
+    .setDescription(`\`\`\`${kod}\`\`\``)
+    .setTimestamp()
+    
     return message.channel.sendEmbed(embed);
 }; 
 exports.conf = {

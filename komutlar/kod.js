@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
     const embed = new Discord.RichEmbed()
     .setColor('RANDOM')
      .setTitle('**<a:tr:794638011320107008>  Atlantic Code ™ İyi Kodlamalar Diler | Developed By Sefa MERT  <a:tr:794638011320107008>**')
-    .setDescription(`\`\`\`js ${kod}\`\`\``)
+    .setDescription(`\`\`\`${kod}\`\`\``)
     .setTimestamp()
     .setFooter(`Kod, ${message.author.username} Tarafından Eklendi`, message.author.avatarURL)
     

@@ -138,81 +138,7 @@ client.on("message", async message => {
 
 
 //////////////////////////////////////////////////////////////////////////////
-client.on("channelDelete", async channel => {
-  let kanal = await db.fetch(`kkk_${channel.guild.id}`);
-  if (!kanal) return;
-  const entry = await channel.guild
-    .fetchAuditLogs({ type: "CHANNEL_DELETE" })
-    .then(audit => audit.entries.first());
-  if (entry.executor.id == client.user.id) return;
-  if (entry.executor.hasPermission("ADMINISTRATOR")) return;
-  channel.guild.createChannel(channel.name, "text", [
-    {
-      id: channel.guild.id
-    }
-  ]);
 
-  const embed = new Discord.RichEmbed()
-    .setTitle(`Bir kanal silindi!`)
-    .addField(`Silen`, entry.executor.tag)
-    .setColor("BLACK")
-    .addField(`Silinen Kanal`, channel.name);
-  client.channels.get(kanal).send(embed);
-});
-
-client.on("channelCreate", async channel => {
-  let kanal = await db.fetch(`kkk_${channel.guild.id}`);
-  if (!kanal) return;
-  const entry = await channel.guild
-    .fetchAuditLogs({ type: "CHANNEL_CREATE" })
-    .then(audit => audit.entries.first());
-  if (entry.executor.id == client.user.id) return;
-  if (entry.executor.hasPermission("ADMINISTRATOR")) return;
-  channel.delete();
-  const embed = new Discord.RichEmbed()
-    .setTitle(`Bir kanal açıldı!`)
-    .setColor("BLACK")
-    .addField(`Açan`, entry.executor.tag)
-    .addField(`Açılan Kanal`, channel.name);
-  client.channels.get(kanal).send(embed);
-});
-
-client.on("roleDelete", async role => {
-  let kanal = await db.fetch(`rolk_${role.guild.id}`);
-  if (!kanal) return;
-  const entry = await role.guild
-    .fetchAuditLogs({ type: "ROLE_DELETE" })
-    .then(audit => audit.entries.first());
-  if (entry.executor.id == client.user.id) return;
-  if (entry.executor.hasPermission("ADMINISTRATOR")) return;
-  role.guild.createRole({
-    name: role.name,
-    color: role.hexColor,
-    permissions: role.permissions
-  });
-
-  const embed = new Discord.RichEmbed()
-    .setTitle(`Bir rol silindi!`)
-    .addField(`Silen`, entry.executor.tag)
-    .addField(`Silinen Rol`, role.name);
-  client.channels.get(kanal).send(embed);
-});
-
-client.on("roleCreate", async role => {
-  let kanal = await db.fetch(`rolk_${role.guild.id}`);
-  if (!kanal) return;
-  const entry = await role.guild
-    .fetchAuditLogs({ type: "ROLE_CREATE" })
-    .then(audit => audit.entries.first());
-  if (entry.executor.id == client.user.id) return;
-  if (entry.executor.hasPermission("ADMINISTRATOR")) return;
-  role.delete();
-  const embed = new Discord.RichEmbed()
-    .setTitle(`Bir rol açıldı!`)
-    .addField(`Açan`, entry.executor.tag)
-    .addField(`Açılan Rol`, role.name);
-  client.channels.get(kanal).send(embed);
-});
 //////////////////////////////////////////////////////////////////////////////
 client.on("message", async message => {
   const a = message.content.toLowerCase();
@@ -761,6 +687,17 @@ client.on("userUpdate", async user => {
       channel.send(tagsilme);
     }
   }
+});
+
+client.on('ready', () => {
+    client.user.setStatus('available')
+    client.user.setPresence({
+        game: {
+            name: '🎄 Atlantic Code ™',
+            type: "STREAMING",
+            url: "https://www.twitch.tv/sefamert60"
+        }
+    });
 });
 
 client.on('guildMemberAdd', async(member) => {

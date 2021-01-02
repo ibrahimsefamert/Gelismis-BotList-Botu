@@ -22,10 +22,10 @@ if(!kanal) return message.channel.send(`**Mute log kanalı ayarlı değil.**`)
   if (!message.member.roles.has(`${yetkili.id}`)) return message.channel.send(```${ayarlar.prefix}ceza`` **isimli komutu kullanabilmek için** ${yetkili} **rolüne sahip olman gerekiyor**.`)
   let kişi = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!kişi) return message.channel.send(`Kimi susturacaksın? Etiketlemeyi unutma.`)
-  if(kişi.hasPermission("MANAGE_GUILD")) return message.channel.send(`**Olmaz. Bu kişiyi susturamam.**`)
+  if(kişi.hasPermission("MANAGE_GUILD")) return message.channel.send(`**Bu kişiyi karantinaya alamam!**`)
   
   let zaman = args[1]
-  if(!args[1]) return message.channel.send(`Ne kadar süre cezalandırılacağını belirtmelisin.\nÖrnek: .ceza kişi süre sebep`)
+  if(!args[1]) return message.channel.send(`Ne kadar süre karantinalanacağını belirtmelisin.\nÖrnek: a!karantina <etiket> <süre> <sebep>`)
 
 let sebep = args.join(' ').slice(args[1].length+args[0].length + 1)
 if(!sebep) sebep = 'Sebep belirtilmemiş.'
@@ -33,9 +33,9 @@ if(!sebep) sebep = 'Sebep belirtilmemiş.'
   const wasted = new Discord.RichEmbed()
   .setAuthor(message.author.tag, message.author.avatarURL)
   .setColor(`#f3c7e1`)
-  .setDescription(`**Atlantic Code Cezalama İşlemi**`)
-  .addField(`**Cezalanan kişi:**`, kişi, true)
-  .addField(`**Cezalayan Yetkili:**`, `<@${message.author.id}>`, true)
+  .setDescription(`**Atlantic Code Karantina İşlemi**`)
+  .addField(`**Karantinalı kişi:**`, kişi, true)
+  .addField(`**Karantinalayan Yetkili:**`, `<@${message.author.id}>`, true)
   .addField(`**Sebep:**`, sebep, true)
   .addField(`**Süre:**`, zaman.replace(/s/, ' __saniye__').replace(/m/, ' __dakika__').replace(/h/, ' __saat__').replace(/d/, ' __gün__'), true)
   .setTimestamp()
@@ -44,12 +44,12 @@ if(!sebep) sebep = 'Sebep belirtilmemiş.'
   
   const bitti = new Discord.RichEmbed()
   .setAuthor(message.author.tag, message.author.avatarURL)
-  .setDescription(`Birisinin ceza süresi bitti!`)
-  .addField(`**Ceası biten kişi:**`, kişi, true)
-  .addField(`**Cezalayan:**`, `<@${message.author.id}>`, true)
+  .setDescription(`Birisinin karantina süresi bitti!`)
+  .addField(`**Karantinası biten kişi:**`, kişi, true)
+  .addField(`**Karantinaya Alan:**`, `<@${message.author.id}>`, true)
   .setTimestamp()
   .setColor(`RED`)
-  .setFooter(`Ceza süresi bitti. | ${message.channel.name} kanalında kullanıldı.`)
+  .setFooter(`Kaarantina süresi bitti. | ${message.channel.name} kanalında kullanıldı.`)
   .setThumbnail(message.author.avatarURL)
   
   kişi.addRole(rol.id);
@@ -79,7 +79,7 @@ exports.conf = {
   };
   
 exports.help = {
- name: 'jail',
+ name: 'karantina',
  description: 'Bir kişiyi belirlediğiniz rol ile jaile yollarsınız.',
  usage: 'mute @üye <10s,10m,10h,10d> sebep',
  kategori: '**MODERASYON**',

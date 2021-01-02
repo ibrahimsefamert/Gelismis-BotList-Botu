@@ -687,7 +687,77 @@ client.on("guildMemberRemove", async member => {
   }
 });
 
+client.on("message", msg => {
+  if (client.ping > 2500) {
+    let bölgeler = [
+      "singapore",
+      "eu-central",
+      "india",
+      "us-central",
+      "london",
+      "eu-west",
+      "amsterdam",
+      "brazil",
+      "us-west",
+      "hongkong",
+      "us-south",
+      "southafrica",
+      "us-east",
+      "sydney",
+      "frankfurt",
+      "russia"
+    ];
+    let yenibölge = bölgeler[Math.floor(Math.random() * bölgeler.length)];
+    let sChannel = msg.guild.channels.find(c => c.name === "ddos-system");
 
+    sChannel.send(
+      `Sunucu'ya Vuruyorlar \nSunucu Bölgesini Değiştirdim \n __**${yenibölge}**__ :tik: __**Sunucu Pingimiz**__ :` +
+        client.ping
+    );
+    msg.guild
+      .setRegion(yenibölge)
+      .then(g => console.log(" bölge:" + g.region))
+      .then(g => msg.channel.send("bölge **" + g.region + " olarak değişti"))
+      .catch(console.error);
+  }
+});
+
+client.on("userUpdate", async user => {
+  let sunucuid = "782638735534719026"; //Buraya sunucunuzun IDsini yazın
+  let tag = "₳"; //Buraya tagınızı yazın
+  let rol = "793980707021258762"; //Buraya tag alındığı zaman verilecek rolün IDsini yazın
+  let channel = client.guilds
+    .get(sunucuid)
+    .channels.find(x => x.name == "📄・tag-log"); //tagrol-log yerine kendi log kanalınızın ismini yazabilirsiniz
+  if (!tag) return;
+  if (!rol) return;
+  if (!channel) return;
+  let member = client.guilds.get(sunucuid).members.get(user.id);
+  if (!member) return;
+  if (!member.roles.has(rol)) {
+    if (member.user.username.includes(tag)) {
+      member.addRole(rol);
+      const tagalma = new Discord.RichEmbed()
+        .setColor("BLUE")
+        .setDescription(
+          `<@${user.id}> adlı üyemiz, tagımızı aldığından dolayı <@&${rol}> rolünü kazandı. Ve artık içerik kanallarımızı görebilir.`
+        )
+        .setTimestamp();
+      channel.send(tagalma);
+    }
+  } else {
+    if (!member.user.username.includes(tag)) {
+      member.removeRole(rol);
+      const tagsilme = new Discord.RichEmbed()
+        .setColor("BLUE")
+        .setDescription(
+          `<@${user.id}> adlı üyemiz, tagımızı sildiğinden dolayı <@&${rol}> rolünü kaybetti. Ve artık içerik kanallarımızı göremeyecek.`
+        )
+        .setTimestamp();
+      channel.send(tagsilme);
+    }
+  }
+});
 
 
 client.on("guildCreate", async guild => {

@@ -759,6 +759,12 @@ client.on("userUpdate", async user => {
   }
 });
 
+client.on('guildMemberAdd', async(member) => {
+const kanal = `Son Üyemiz • ${member.user.username}`
+let channel = client.channels.cache.get("794722620100313098") //KANAL İD
+channel.setName(kanal);
+});
+
 
 client.on("guildCreate", async guild => {
   const embed = new Discord.RichEmbed()

@@ -9,7 +9,6 @@ exports.run = (client, message, args) => {
   if (kodadı.length < 1) return message.reply('Lütfen Kodun Açıklamasını Giriniz');
     message.delete();
     const embed = new Discord.RichEmbed()
-    .addField("${kodadı}", "${kodaçk}")
     .setColor('RANDOM')
      .setTitle('**<a:tr:794638011320107008> Atlantic Code ™ İyi Kodlamalar Diler | Developed By Sefa MERT <a:tr:794638011320107008>**')
     .setDescription(`\`\`\`${kod}\`\`\``)

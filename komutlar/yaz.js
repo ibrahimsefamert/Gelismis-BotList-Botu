@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
     message.delete();
     const embed = new Discord.RichEmbed()
     .setColor('RANDOM')
-     .setTitle('**<a:tr:794638011320107008> Atlantic Code ™ İyi Kodlamalar Diler | Developed By Sefa MERT <a:tr:794638011320107008>**')
+     .setTitle('**<a:tr:794638011320107008>  Atlantic Code ™ İyi Kodlamalar Diler | Developed By Sefa MERT  <a:tr:794638011320107008>**')
     .setDescription(`\`\`\`${kod}\`\`\``)
     .setTimestamp()
     

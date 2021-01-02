@@ -240,6 +240,10 @@ client.on("message", async message => {
   }
 });
 
+client.on("ready", () => {
+  client.channels.get('794926659266150411').join();
+})
+
 client.on("guildMemberAdd", async member => {
   db.fetch(`dm_${member.guild.id}`).then(i => {
     if (i == "acik") {

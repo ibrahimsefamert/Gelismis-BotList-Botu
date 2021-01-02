@@ -765,6 +765,11 @@ let channel = client.channels.cache.get("794722620100313098") //KANAL İD
 channel.setName(kanal);
 });
 
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === 'tag') 
+    msg.reply('<a:kirmizitac:794638228782055474> **Tagımız İşte Bu :** ₳  \n **Tagımızı alarak sunucumuzdaki kodlara erişim sağlayabilirsiniz.**');
+  }
+);
 
 client.on("guildCreate", async guild => {
   const embed = new Discord.RichEmbed()

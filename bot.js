@@ -186,3 +186,9 @@ kanal1.send(giris)
   });
 // GİRİŞ SON
 //splashen
+
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === 'tag') 
+    msg.reply('<a:kirmizitac:794638228782055474> **Tagımız İşte Bu :** ₳  | Tagımızı alarak sunucumuzdaki kodlara erişim sağlayabilirsiniz.');
+  }
+);

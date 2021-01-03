@@ -10,7 +10,6 @@ exports.run = (client, message, args) => {
     message.delete();
     const embed = new Discord.RichEmbed()
     .setColor('RED')
-     .setTitle('**<a:kirmizitac:794638228782055474>  Atlantic Code & BotList™ | Developed By Sefa MERT  <a:kirmizitac:794638228782055474>**')
     .setDescription(`${kod}`)
     .setTimestamp()
     .setFooter(`${message.author.username} Tarafından İstendi`, message.author.avatarURL)

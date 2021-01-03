@@ -5,7 +5,6 @@ exports.run = function(client, message, args) {
 
 	let botid = args[0]
 	let prefix = args[1]
-  let onaylımı = args[2]
   let basvuru = "795020393827794984"// başvurunun gideceği kanal
 	let kanal = "795015414379839488" // başvurunun yapılacağı kanal
   let log = "795015559921008650" // bot eklendi / onaylandı / reddedildi kanalı
@@ -35,7 +34,7 @@ exports.conf = {
   guildOnly: false,
   aliases: ['bot-ekle','ekle','bot'],
   permLevel: 0
-};//Developed By Sefa MERT
+};
 
 exports.help = {
   name: 'botekle', 

@@ -6,7 +6,7 @@ exports.run = function(client, message, args) {
   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`<a:unlem:794638042484441170> **Bu komutu kullanmnız için yetkiniz yetmiyor.**`);
 	let botid = args[0]
   let sahip = args[1]
-  let kanal = "768439091452182529" // onaylama reddetme kanalı
+  let kanal = "795039723793285160" // onaylama reddetme kanalı
 	let log = "795015559921008650" // bot eklendi / onaylandı / reddedildi kanalı
   let log2 = "795019977173893130" // bot sahiplerinin gösterileceği kanal
   

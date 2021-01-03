@@ -191,9 +191,9 @@ client.on("guildMemberAdd", async member => {
   let veri = db.fetch(`csbo_${member.guild.id}`)  
   if (veri){
   if (member.user.bot) {
-  let csr = member.guild.roles.cache.get(veri)
+  let csr = member.guild.roles.get(veri)
   if(csr){
-  member.roles.add(csr)
+  member.addRole(csr)
   }}}//FroLenk
   })
 
@@ -225,6 +225,8 @@ client.on("userUpdate", async(eski, yeni) => {
      }
   }
   })
+
+
 
 client.elevation = message => {
   if (!message.guild) {

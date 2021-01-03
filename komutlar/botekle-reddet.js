@@ -37,7 +37,7 @@ exports.run = function(client, message, args) {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['bot-onayla', 'onayla','onay','o'],
+  aliases: [],
   permLevel: 3
 };//Atlantic Code'ye Aittir.
 

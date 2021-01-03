@@ -10,9 +10,11 @@ exports.run = function(client, message, args) {
   let log = "795015559921008650" // bot eklendi / onaylandı / reddedildi kanalı
 	
   if (message.channel.id !== kanal) return message.channel.send(`<a:unlem:794638042484441170> **Botunuz için sadece <#${kanal}> kanalında başvuruda bulunabilirsiniz.**`).then(msg => msg.delete(10000))
+ 
 	if (message.channel.id == kanal) {
   if (!botid) return message.channel.send(`<a:unlem:794638042484441170>  **Botunun idsini yazmalısın.** \n **Örnek :** \`\`!botekle <bot-id> <bot-prefix>\`\``).then(msg => msg.delete(10000))
-  if (!prefix) return message.channel.send(`<a:unlem:794638042484441170> **Botunun prefixini yazmalısın.**`).then(msg => msg.delete(10000))
+  if (!prefix) return message.channel.send(`<a:unlem:794638042484441170> **Botunun prefixini yazmalısın.** \n **Örnek :** \`\`!botekle <bot-id> <bot-prefix>\`\``).then(msg => msg.delete(10000))
+    
   
   message.delete()
   const embed = new Discord.RichEmbed()

@@ -191,9 +191,9 @@ client.on("guildMemberAdd", async member => {
   let veri = db.fetch(`csbo_${member.guild.id}`)  
   if (veri){
   if (member.user.bot) {
-  let csr = member.guild.roles.get(veri)
+  let csr = member.guild.roles.cache.get(veri)
   if(csr){
-  member.addRole(csr)
+  member.roles.add(csr)
   }}}//FroLenk
   })
 

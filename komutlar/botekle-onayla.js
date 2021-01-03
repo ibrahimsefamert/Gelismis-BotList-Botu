@@ -18,18 +18,33 @@ exports.run = function(client, message, args) {
   message.delete()
   const embed = new Discord.RichEmbed()
   .setColor("ff0000")
-  .setTitle("<a:kirmizitac:794638228782055474>  Atlantic Code & BotList ™ | Dev. By Sefa MERT <a:kirmizitac:794638228782055474>")
+  .setTitle("<a:kirmizitac:794638228782055474>  Atlantic Code & BotList ™")
   .addField("<a:tik:794989992296054856> Botu Sunucuna Ekle", "[0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=0) & [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=8)")
   .addField("<a:parlayandeveloper:794989633385660426> Botun Geliştiricisinin İdsi", sahip)
   .addField("<a:ucgenler:794989953934688296> Botun İdsi", botid)
   .addField("<a:donenelmas:794639977077145602> Botun Prefixi", prefix)
   .addField("<a:down:794990602277093406> Botu Onaylayan Yetkili", message.author.tag )
+  .setImage("https://cdn.discordapp.com/attachments/794721957677367356/795212264214233098/20200806_002234.jpg")
+  .setThumbnail(message.author.avatarURL)
   .setTimestamp()
-  .setFooter("Bu bot, Sefa MERT tarafından geliştirlmiştir.","https://media.discordapp.net/attachments/794721957677367356/795212264214233098/20200806_002234.jpg?width=473&height=473")
+  .setFooter("Bu bot, Sefa MERT tarafından geliştirlmiştir.",client.user.avatarURL)
   client.channels.get(botsahipleri).send(embed)
+  
+  .setColor("ff0000")
+  .setTitle("<a:kirmizitac:794638228782055474>  Atlantic Code & BotList ™")
+  .addField("<a:tik:794989992296054856> Botu Sunucuna Ekle", "[0 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=0) & [8 Perm Ekle](https://discordapp.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=8)")
+  .addField("<a:parlayandeveloper:794989633385660426> Botun Geliştiricisinin İdsi", sahip)
+  .addField("<a:ucgenler:794989953934688296> Botun İdsi", botid)
+  .addField("<a:donenelmas:794639977077145602> Botun Prefixi", prefix)
+  .addField("<a:down:794990602277093406> Botu Onaylayan Yetkili", message.author.tag )
+  .setImage("https://cdn.discordapp.com/attachments/794721957677367356/795212264214233098/20200806_002234.jpg")
+  .setThumbnail(message.author.avatarURL)
+  .setTimestamp()
+  .setFooter("Bu bot, Sefa MERT tarafından geliştirlmiştir.",client.user.avatarURL)
+  client.channels.get(log).send(embed)
 
-	client.channels.get(log).send(`<:tsl_onaylandi:769298286623981590> <@${sahip}> **adlı geliştiricinin; <@${botid}> adlı, __${botid}__ idli botu onaylandı.**\n __*Botu Onaylayan Yetkili :*__ ${message.author} - **${message.author.tag}**`)
-  message.channel.send(`<a:onay:794638422492315680> **Başarıyla <@{botid}> adlı botu onayladınız.**`).then(msg => msg.delete(10000))
+
+  message.channel.send(`<a:onay:794638422492315680> **Başarıyla botu onayladınız.**`).then(msg => msg.delete(10000))
 };//Atlantic Code'ye Aittir.
 
 exports.conf = {

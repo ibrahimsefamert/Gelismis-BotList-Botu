@@ -30,7 +30,7 @@ exports.run = function(client, message, args) {
   .setFooter("Bu bot, Sefa MERT tarafından geliştirlmiştir.",client.user.avatarURL)
   client.channels.get(botsahipleri).send(embed)
   
-  client.channels.get(log).send(`<:onaylandi:794990256537075723> <@${sahip}> **adlı geliştiricinin; <@${botid}> adlı, __${botid}__ idli botu onaylandı.**\n <a:hyq:794637845255421953> __*Botu Onaylayan Yetkili ${message.author} - **${message.author.tag}**`)
+  client.channels.get(log).send(`<:onaylandi:794990256537075723> <@${sahip}> **adlı geliştiricinin; <@${botid}> adlı, __${botid}__ idli botu onaylandı.**\n <a:hyq:794637845255421953> __**Botu Onaylayan Yetkili :**__ ${message.author} - **${message.author.tag}**`)
   
   
   message.channel.send(`<a:onay:794638422492315680> **Başarıyla botu onayladınız.**`).then(msg => msg.delete(10000))

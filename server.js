@@ -207,16 +207,9 @@ client.on('message', msg => {
 
 //DASHBOARD
 client.on('message', msg => {
-  client.channels.cache.get("710291379959365712").setName(` Toplam Üye  ${msg.guild.memberCount}`); 
-  client.channels.cache.get("710291392735215676").setName(` Çevrimiçi Üye  ${msg.guild.members.cache.filter(m => m.presence.status != "offline").size}`); 
-  client.channels.cache.get("710296888146002021").setName(` Bot Sayısı  ${msg.guild.members.cache.filter(m => m.user.bot).size}`); 
-  client.channels.cache.get("710304997992038401").setName(` Ses Sayısı  ${msg.guild.members.cache.filter(m => m.voice.channel).size}`); 
-  client.channels.cache.get("710298475694260254").setName(` Ping Sayısı  ${client.ws.ws.ping}`); 
-  client.channels.cache.get("710300170738335796").setName(` Toplam Kanal  ${client.channels.size.toLocaleString()}`);
-  client.channels.cache.get("710300435608633404").setName(` K.RAM  ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`);
-  client.channels.cache.get("710300893136027739").setName(`${msg.author.username}`);
-  if (msg.content.toLowerCase() === 'sa') {
-  client.channels.cache.get("710301583111487608").setName(`${msg.author.username}`);
+  client.channels.get("795241778009473065").setName(`🎄・Total Member: ${msg.guild.memberCount}`); 
+  if (msg.content.toLowerCase() === 'dash') {
+  client.channels.get("794721957677367356").setName(`${msg.author.username}`);
 }})
 
 client.elevation = message => {

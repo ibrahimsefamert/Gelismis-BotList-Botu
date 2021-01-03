@@ -1,46 +1,26 @@
 const Discord = require('discord.js');
 
-
-exports.run = function(client, message, args) {
-
-	let botid = args[0]
-	let prefix = args[1]
-  let basvuru = "795020393827794984"// başvurunun gideceği kanal
-	let kanal = "795015414379839488" // başvurunun yapılacağı kanal
-  let log = "795015559921008650" // bot eklendi / onaylandı / reddedildi kanalı
-	
-  if (message.channel.id !== kanal) return message.channel.send(`<a:unlem:794638042484441170> **Botunuz için sadece <#${kanal}> kanalında başvuruda bulunabilirsiniz.**`).then(msg => msg.delete(10000))
-	if (message.channel.id == kanal) {
-  if (!botid) return message.channel.send(`<a:unlem:794638042484441170>  **Botunun idsini yazmalısın.** \n **Örnek :** \`\`!botekle <bot-id> <bot-prefix>\`\``).then(msg => msg.delete(10000))
-  if (!prefix) return message.channel.send(`<a:unlem:794638042484441170> **Botunun prefixini yazmalısın.**`).then(msg => msg.delete(10000))
-  
-  message.delete()
-  const embed = new Discord.RichEmbed()
-  .setColor("ff0000")
-  .setDescription(`[Botu Test İçin Ekle](https://discordapp.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=0)`, true)
-  .setTitle("<a:kirmizitac:794638228782055474>  Atlantic BotList ™  Başvuru İşlemi <a:kirmizitac:794638228782055474>")
-  .addField("Bot Sahibi", message.author.tag )
-  .addField("Bot Sahibi İd", message.author.id)
-  .addField("Bot ID", botid)
-  .addField("Bot Prefix",prefix)
-  .setTimestamp()
-  .setThumbnail("https://cdn.discordapp.com/attachments/794721957677367356/795095560817475614/122-1222931_discord-bot-logo-hd-png-download-removebg-preview.png")
-  .setFooter(`Bot, ${message.author.username} Adlı Kullanıcı Tarafından Eklendi`, message.author.avatarURL)
-  client.channels.get(basvuru).send(embed)
-  client.channels.get(log).send(`<:bekliyor:794990233036783657>  ${message.author} **adlı geliştiricinin; <@${botid}> adlı, __${botid}__ idli botu inceleme sırasına alındı.**`)
-  message.channel.send(`<a:onay:794638422492315680> **${message.author}, botunuz başarıyla inceleme sırasına alınmıştır. Bizimle çalıştığınız için teşekkürler.**`).then(msg => msg.delete(10000))
-  }
-};
-
+exports.run = (client, message, args) => {
+    let kod = args.slice(0).join(' ');
+    if (kod.length < 1) return message.reply('<a:unlem:794638042484441170>**Yanlış kullanım** \n <a:gul:794639948409339914> **Doğru Kullanım :** ``-kod <kodunuz>``');
+    message.delete();
+    const embed = new Discord.RichEmbed()
+    .setColor('RANDOM')
+     .setTitle('**<a:tr:794638011320107008>  Atlantic Code ™ İyi Kodlamalar Diler | Developed By Sefa MERT  <a:tr:794638011320107008>**')
+    .setDescription(`\`\`\`${kod}\`\`\``)
+    .setTimestamp()
+    .setFooter(`Kod, ${message.author.username} Tarafından Eklendi`, message.author.avatarURL)
+    return message.channel.sendEmbed(embed);
+}; 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['bot-ekle','ekle'],
+  aliases: ['k', 'kodpaylaş'],
   permLevel: 0
 };
 
 exports.help = {
-  name: 'botekle', 
-  description: "Sunucuya bot eklemenizi sağlar.",
-  usage: 'botekle <botid> <prefix>'
-};
+  name: "kod",
+  description: "Bot yazı yazar.",
+  usage: "yaz"
+}; 

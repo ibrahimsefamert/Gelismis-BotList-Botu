@@ -7,20 +7,20 @@ exports.run = async (client, message) => {
 var streamList = {
     damar: [{
         addr: "https://yayin.damarfm.com:8080/;stream/1/",
-        name: "Radyo Damar #1"
+        name: " Damar Radyo"
     }],
-    "arabesk": [{
+    arabesk: [{
         addr: "https://playerservices.streamtheworld.com/api/livestream-redirect/SC008_SO1_SC?/;",
-        name: "Radyo Arabesk #1"
+        name: " Arabesk Radyo"
     }],
     trap: [{
             addr: "https://radyodinle1.turkhosted.com/yayin?uri=95.173.188.166:9984/&tkn=_LDNX_iKT-XUJXbZyEcW_g&tms=1589039843",
-            name: "Radyo Türkçe Rap #1"
+            name: " Yabancı Radyo"
         }
     ],
     pop: [{
         addr: "https://playerservices.streamtheworld.com/api/livestream-redirect/SUPER2_SC?/;",
-        name: "Radyo Pop #1"
+        name: " Türkçe Radyo"
     }]
 
 }
@@ -35,9 +35,9 @@ var randarray = function(array) {
                 station = randarray(genre)
             playSong(connection, station.addr)
             
-            message.channel.send("Now Playing: " + station.name)
+            message.channel.send("<a:radyo:795246499453730867> **Şuanda çalınıyor :**" + station.name)
         } catch (err) {
-            message.channel.send(":x: You need to be in a voice channel to play radio.")
+            message.channel.send("<a:unlem:794638042484441170> **Radyo dinlemek için bir ses kanalında olmalısınız.**")
         }
      
 

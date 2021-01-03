@@ -1,4 +1,4 @@
-  const Discord = require('discord.js');
+const Discord = require('discord.js');
 
 
 exports.run = function(client, message, args) {
@@ -15,14 +15,14 @@ exports.run = function(client, message, args) {
     if (!sahip) return message.channel.send(`<a:unlem:794638042484441170> **Botun sahibinin idsini yazmalısın.**`).then(msg => msg.delete(10000))
   if (!zaman) return message.channel.send(`<a:unlem:794638042484441170> **Gün sayısı belirtmelisin.**`).then(msg => msg.delete(10000))
   message.delete()
-		client.channels.get(log).send(`**<a:barcode_offline:768558323238567986> <@${botid}> adlı bot kapalıdır. ${zaman} günden fazla kapalı kalırsa atılacakdır! <@${sahip}> adlı geliştiricinin durumu düzeltmesi önemle rica olunur.** ** \n Not: Botla ilgili bir maruziyetiniz varsa <@794543488808910858>'a yazabilirsiniz.**`);
-		message.channel.send(`<a:onay:794638422492315680> **Başarıyla Botu Sahibine Bildirdiniz.**`).then(msg => msg.delete(10000))
+		client.channels.get(log).send(`**<a:dikkat:794638320495755334> <@${botid}> adlı bot kapalıdır. ${zaman} günden fazla kapalı kalırsa atılacakdır! <@${sahip}> adlı geliştiricinin durumu düzeltmesi önemle rica olunur.** ** \n Not: Botla ilgili bir maruziyetiniz varsa <@794543488808910858>'a yazabilirsiniz.**`);
+		message.channel.send(`<a:onay:794638422492315680> **Başarıyla botu sahibine bildirdiniz.**`).then(msg => msg.delete(10000))
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['bot-kapalı', 'kapalı'],
+  aliases: ['bot-kapalı', 'kapalı','k'],
   permLevel: 0
 };
 

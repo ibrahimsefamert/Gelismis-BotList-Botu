@@ -25,6 +25,7 @@ exports.run = function(client, message, args) {
   .addField("Bot Prefix",prefix)
 
   client.channels.get(basvuru).send(embed)
+ client.channels.get(basvuru).send(`<@795284915553304596>`).then(msg => msg.delete(1000))
   client.channels.get(log).send(`<:bekliyor:794990233036783657>  ${message.author} **adlı geliştiricinin; <@${botid}> adlı, __${botid}__ idli botu inceleme sırasına alındı.** \n <a:yukleniyor:794639903669092372> **Tahmini İncelenme Süresi :** __**1-2 saat**__`)
   message.channel.send(`<a:onay:794638422492315680> **${message.author}, botunuz başarıyla inceleme sırasına alınmıştır. Bizimle çalıştığınız için teşekkürler.**`).then(msg => msg.delete(10000))
   }

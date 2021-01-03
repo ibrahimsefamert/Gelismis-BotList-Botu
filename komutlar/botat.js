@@ -14,11 +14,10 @@ exports.run = function(client, message, args) {
 	
   if (message.channel.id !== kanal) return message.channel.send(`**<a:unlem:794638042484441170> Sitemimizde bulunan bir botu yalnızca <#${kanal}> kanalında atabilirsin.**`).then(msg => msg.delete(5000))
 	if (!botisim) return message.channel.send(`<a:unlem:794638042484441170> **Botun idsini yazmalısın.**`).then(msg => msg.delete(10000))
-  message.delete()
   if (!sebep) return message.channel.send(`<a:unlem:794638042484441170> **3 kelimelik sebep yazmalısın.**`).then(msg => msg.delete(10000))
-  message.delete()
 		client.channels.get(log).send(`<:cop:794637826829713469> <@${sahip}> adlı kişinin <@${botisim}> adlı botu atıldı.Sebep: **${sebep} ${sebepp} ${sebeppp}**. Atan yetkili : ${message.author}`);
 		message.channel.send(`<a:onay:794638422492315680> **Başarıyla botu attınız.**`).then(msg => msg.delete(10000))
+  	message.delete()
 };
 
 exports.conf = {

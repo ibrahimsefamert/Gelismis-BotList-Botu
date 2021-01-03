@@ -20,8 +20,8 @@ exports.run = function(client, message, args) {
   .setDescription(`[Botu Test İçin Ekle](https://discordapp.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=0)`, true)
   .setTitle("<a:kirmizitac:794638228782055474>  Atlantic BotList ™  <a:kirmizitac:794638228782055474>")
   .addField("Bot Sahibi", message.author.tag )
-  .addField("Bot Sahibi İd", message.author.id)
-  .addField("Bot ID", botid)
+  .addField("Bot Sahibi İD", message.author.id)
+  .addField("Bot İD", botid)
   .addField("Bot Prefix",prefix)
 
   client.channels.get(basvuru).send(embed)

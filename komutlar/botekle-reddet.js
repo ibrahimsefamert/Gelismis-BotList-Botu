@@ -37,12 +37,12 @@ exports.run = function(client, message, args) {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["bot-reddet","r"],
   permLevel: 3
 };//Atlantic Code'ye Aittir.
 
 exports.help = {
-  name: 'botonayla', 
+  name: 'reddet', 
   description: "Sunucuya eklenen botu onaylar.",
   usage: 'botonayla <bot ismi>'//Atlantic Code Adına Sefa MERT Tarafından Geliştirilmiştir
 };6

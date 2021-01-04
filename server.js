@@ -336,7 +336,7 @@ client.on("userUpdate", async(eski, yeni) => {
   const chatlog = new Discord.WebhookClient('795794347462230016', 'T2PlhDmNmddtukzJ13iYylQnE6JRp7Mw5-M22dmnyri8zCz-pUNcNxWYZSC3sSJ1bVnO');
   
   client.on("message", m => {
-    if (m.channel.id !== "795794001713823804") { //buraya o kanalın ID'si yazılacak.
+    if (m.channel.id !== "794337591755145226") { //buraya o kanalın ID'si yazılacak.
       return;
     }
     if (m.author.id == m.guild.member) return;
@@ -346,7 +346,7 @@ client.on("userUpdate", async(eski, yeni) => {
       .setThumbnail(m.author.avatarURL)
       .setTitle(`${m.author.tag}`)
       .setDescription(`**Kişinin Yazdığı Mesaj** \`\`\` ${m.content} \`\`\``)
-      .setFooter(`Atlantic Code ™`);
+      .setFooter(`Atlantic Code ™ | Mesaj Log`);
      chatlog.send(mesajjs)
     }
   });

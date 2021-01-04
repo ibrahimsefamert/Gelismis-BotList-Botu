@@ -213,6 +213,111 @@ client.on('message', msg => {
   client.channels.get("794721957677367356").setName(`${msg.author.username}`);
 }})
 
+//LOG SİSTEMİ
+
+client.on('warn', e => {
+  console.log(chalk.bgYellow(e.replace(regToken, 'that was redacted')));
+});
+
+client.on('error', e => {
+  console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
+});
+
+
+client.on('guildBanAdd', async (guild, member) => {
+const kayitk = await db.fetch(`kayitlar_${member.guild.id}`); 
+const kayitk2 = member.guild.channels.find('name', kayitk);
+  if (!kayitk2) return;
+   const embed = new Discord.RichEmbed()
+			.setTitle('Üye yasaklandı.')
+			.setAuthor(member.user.tag, member.user.avatarURL)
+			.setColor("15158332")
+			.setDescription(`<@!${member.user.id}>, ${member.user.tag}`)
+			.setThumbnail(member.user.avatarURL)
+			.setFooter(`ID: ${member.user.id}`)
+			.setTimestamp();
+			kayitk2.send({embed});
+	});
+	
+	client.on('guildBanRemove', async (guild, member) => {
+    const kayitk = await db.fetch(`kayitlar_${member.guild.id}`); 
+    const kayitk2 = member.guild.channels.find('name', kayitk);
+    if (!kayitk2) return;
+			var embed = new Discord.RichEmbed()
+			.setTitle('Üyenin yasaklaması kaldırıldı.')
+			.setAuthor(member.user.tag, member.user.avatarURL)
+			.setColor(3447003)
+			.setDescription(`<@!${member.user.id}>, ${member.user.tag}`)
+			.setThumbnail(member.user.avatarURL)
+			.setFooter(`ID: ${member.user.id}`)
+			.setTimestamp();
+			kayitk2.send({embed});
+		
+	})
+	
+	client.on('messageDelete', async message => {
+    const kayitk = await db.fetch(`kayitlar_${message.guild.id}`); 
+    const kayitk2 = message.guild.channels.find('name', kayitk);
+    if (!kayitk2) return;
+			var embed = new Discord.RichEmbed()
+			.setAuthor(message.author.tag, message.author.avatarURL)
+			.setColor(15158332)
+			.setDescription(`<@!${message.author.id}> tarafından <#${message.channel.id}> kanalına gönderilen mesajı silindi.`)
+      .addField("Silinen Mesaj", `\`\`\`${message.content}\`\`\``)
+			.setFooter(`Mesaj ID: ${message.id}`)
+			kayitk2.send({embed});
+		
+	});
+
+	client.on('channelCreate', async channel => {
+	  const kayitk = await db.fetch(`kayitlar_${channel.guild.id}`); 
+    const kayitk2 = channel.guild.channels.find('name', kayitk);
+    if (!kayitk2) return;
+			if (channel.type === "text") {
+				var embed = new Discord.RichEmbed()
+				.setColor(3066993)
+				.setAuthor(channel.guild.name, channel.guild.iconURL)
+				.setDescription(`<#${channel.id}> Adında Bir **Metin** Kanalı Oluşturuldu!`)
+				.setFooter(`Kanal ID: ${channel.id}`)
+				kayitk2.send({embed});
+			};
+			if (channel.type === "voice") {
+				var embed = new Discord.RichEmbed()
+				.setColor(3066993)
+				.setAuthor(channel.guild.name, channel.guild.iconURL)
+				.setDescription(`${channel.name} Adında Bir **Sesli** Kanal Oluşturuldu!`)
+				.setFooter(`Kanal ID: ${channel.id}`)
+				kayitk2.send({embed});
+			}
+		
+	});
+
+		client.on('channelDelete', async channel => {
+    const kayitk = await db.fetch(`kayitlar_${channel.guild.id}`); 
+    const kayitk2 = channel.guild.channels.find('name', kayitk);
+    if (!kayitk2) return;
+			if (channel.type === "text") {
+				let embed = new Discord.RichEmbed()
+				.setColor(3066993)
+				.setAuthor(channel.guild.name, channel.guild.iconURL)
+				.setDescription(`${channel.name} Adında Bir **Metin** Kanalı Silindi!`)
+				.setFooter(`Kanal ID: ${channel.id}`)
+				kayitk2.send({embed});
+			};
+			if (channel.type === "voice") {
+				let embed = new Discord.RichEmbed()
+				.setColor(3066993)
+				.setAuthor(channel.guild.name, channel.guild.iconURL)
+				.setDescription(`${channel.name} Adında Bir **Sesli** Kanal Silindi!`)
+				.setFooter(`Kanal ID: ${channel.id}`)
+				kayitk2.send({embed});
+			}
+		
+	})
+
+
+
+
 //TAG-ROL SİSTEMİ
 client.on("userUpdate", async(eski, yeni) => {
   if(eski.username !== yeni.username) {
@@ -227,6 +332,29 @@ client.on("userUpdate", async(eski, yeni) => {
   }
   })
 
+//SUNUCU İSTATİSTİK
+const serverStats = { // SUNUCU İSTATİSTİK
+  guildID: '782638735534719026', //Sunucunun ID'si
+  totalUsersID: '527346978582036490', //Toplam kullanıcı sayısının gözükmesini istediğin kanalın ID'si
+  memberCountID: '527347216898195467', //Toplam Bot Olmayanların sayısının gözükmesini istediğin kanalın ID'si
+  botCountID: '527347123730120715' //Toplam Bot Olanların sayısının gözükmesini istediğin kanalın ID'si
+};
+
+client.on('guildMemberAdd', member => {
+  if (member.guild.id !== serverStats.guildID) return;
+  client.channels.get(serverStats.totalUsersID).setName(` : ${member.guild.memberCount}`);
+  client.channels.get(serverStats.memberCountID).setName(`Üye Sayısı : ${member.guild.members.filter(m => !m.user.bot).size}`);
+  client.channels.get(serverStats.botCountID).setName(`Bot Sayısı : ${member.guild.members.filter(m => m.user.bot).size}`);
+ 
+});
+
+client.on('guildMemberRemove', member => {
+  if (member.guild.id !== serverStats.guildID) return;
+  client.channels.get(serverStats.totalUsersID).setName(`Toplam Kullanıcı Sayısı : ${member.guild.memberCount}`);
+  client.channels.get(serverStats.memberCountID).setName(`Üye Sayısı : ${member.guild.members.filter(m => !m.user.bot).size}`);
+  client.channels.get(serverStats.botCountID).setName(`Bot Sayısı : ${member.guild.members.filter(m => m.user.bot).size}`);
+  
+});
 
 
 client.elevation = message => {

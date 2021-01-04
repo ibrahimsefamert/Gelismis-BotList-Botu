@@ -205,21 +205,6 @@ client.on('message', msg => {
   }
 );
 
-//AFK
-client.on("message", async message => {
-    let afk_kullanici = message.mentions.users.first() || message.author;
-    if(message.content.startsWith("!afk")) return; //! yazan yeri kendi botunuzun prefixi ile değiştirin.
-  if (message.author.bot === true) return;
-    if(message.content.includes(`<@${afk_kullanici.id}>`))
-        if(await db.fetch(`afks_${afk_kullanici.id}`)) {
-                message.channel.send(`**${client.users.get(afk_kullanici.id).tag}** adlı kullanıcı şuanda AFK! \n**Sebep:** \n${await db.fetch(`afks_${afk_kullanici.id}`)}`)
-        }
-        if(await db.fetch(`afks_${message.author.id}`)) {
-                message.reply("başarıyla AFK modundan çıktın!")
-            db.delete(`afks_${message.author.id}`)
-        }
-});
-
 
 //DASHBOARD
 client.on('message', msg => {

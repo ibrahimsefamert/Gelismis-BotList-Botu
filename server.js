@@ -332,29 +332,7 @@ client.on("userUpdate", async(eski, yeni) => {
   }
   })
 
-//SUNUCU İSTATİSTİK
-const serverStats = { // SUNUCU İSTATİSTİK
-  guildID: '782638735534719026', //Sunucunun ID'si
-  totalUsersID: '527346978582036490', //Toplam kullanıcı sayısının gözükmesini istediğin kanalın ID'si
-  memberCountID: '527347216898195467', //Toplam Bot Olmayanların sayısının gözükmesini istediğin kanalın ID'si
-  botCountID: '527347123730120715' //Toplam Bot Olanların sayısının gözükmesini istediğin kanalın ID'si
-};
 
-client.on('guildMemberAdd', member => {
-  if (member.guild.id !== serverStats.guildID) return;
-  client.channels.get(serverStats.totalUsersID).setName(` : ${member.guild.memberCount}`);
-  client.channels.get(serverStats.memberCountID).setName(`Üye Sayısı : ${member.guild.members.filter(m => !m.user.bot).size}`);
-  client.channels.get(serverStats.botCountID).setName(`Bot Sayısı : ${member.guild.members.filter(m => m.user.bot).size}`);
- 
-});
-
-client.on('guildMemberRemove', member => {
-  if (member.guild.id !== serverStats.guildID) return;
-  client.channels.get(serverStats.totalUsersID).setName(`Toplam Kullanıcı Sayısı : ${member.guild.memberCount}`);
-  client.channels.get(serverStats.memberCountID).setName(`Üye Sayısı : ${member.guild.members.filter(m => !m.user.bot).size}`);
-  client.channels.get(serverStats.botCountID).setName(`Bot Sayısı : ${member.guild.members.filter(m => m.user.bot).size}`);
-  
-});
 
 
 client.elevation = message => {

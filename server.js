@@ -197,11 +197,6 @@ client.on("guildMemberAdd", async member => {
   }}}//FroLenk
   })
 
-//BOT YENİDEN BAŞLATILINCA MESAJ ATMA
-client.on('ready', msg => {
-let kanal = "795278528886472714"
-client.channels.get(kanal).sendFileFilesCodeEmbedMessage(`**<a:down:794990602277093406> **Yeniden başlatıldım!**`)
-})
 
 //TAG
 client.on('message', msg => {
@@ -209,6 +204,22 @@ client.on('message', msg => {
     msg.reply('<a:kirmizitac:794638228782055474> **Tagımız İşte Bu :** ₳  \n **Tagımızı alarak bize destek olabilirsin** <a:atankalp:794989940207255562>');
   }
 );
+
+//AFK
+client.on("message", async message => {
+    let afk_kullanici = message.mentions.users.first() || message.author;
+    if(message.content.startsWith("!afk")) return; //! yazan yeri kendi botunuzun prefixi ile değiştirin.
+  if (message.author.bot === true) return;
+    if(message.content.includes(`<@${afk_kullanici.id}>`))
+        if(await db.fetch(`afks_${afk_kullanici.id}`)) {
+                message.channel.send(`**${client.users.get(afk_kullanici.id).tag}** adlı kullanıcı şuanda AFK! \n**Sebep:** \n${await db.fetch(`afks_${afk_kullanici.id}`)}`)
+        }
+        if(await db.fetch(`afks_${message.author.id}`)) {
+                message.reply("başarıyla AFK modundan çıktın!")
+            db.delete(`afks_${message.author.id}`)
+        }
+});
+
 
 //DASHBOARD
 client.on('message', msg => {

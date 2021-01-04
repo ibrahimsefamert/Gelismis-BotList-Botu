@@ -217,10 +217,10 @@ client.on("userUpdate", async(eski, yeni) => {
   if(eski.username !== yeni.username) {
   if(!yeni.username.includes("₳") && client.guilds.get("782638735534719026").members.get(yeni.id).roles.has("793980707021258762")) {
      client.guilds.get("782638735534719026").members.get(yeni.id).removeRole("793980707021258762")
-     client.channels.get('793981181800611901').send(`<a:up:794990618652442624> ${yeni}, tagımızı çıkardığı için artık içeriklere erişemeyecek.`)
+     client.channels.get('793981181800611901').send(`<a:up:794990618652442624> **${yeni}, tagımızı çıkardı! Neden be aga:/**.`)
     }
-     if(yeni.username.includes("TAG") && !client.guilds.get("782638735534719026").members.get(yeni.id).roles.has("793980707021258762")) {
-      client.channels.get('793981181800611901').send(`<a:down:794990602277093406> ${yeni}, tagımızı aldığından dolayı artık içeriklerimize erişebilecek.`)
+     if(yeni.username.includes("₳") && !client.guilds.get("782638735534719026").members.get(yeni.id).roles.has("793980707021258762")) {
+      client.channels.get('793981181800611901').send(`<a:down:794990602277093406> **${yeni}, tagımızı aldı! Teşekkürler ${yeni}.**`)
       client.guilds.get("782638735534719026").members.get(yeni.id).addRole("793980707021258762")
      }
   }

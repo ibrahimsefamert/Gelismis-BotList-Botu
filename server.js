@@ -332,7 +332,24 @@ client.on("userUpdate", async(eski, yeni) => {
   }
   })
 
-
+//MESAJ LOG 
+  const chatlog = new Discord.WebhookClient('795794347462230016', 'T2PlhDmNmddtukzJ13iYylQnE6JRp7Mw5-M22dmnyri8zCz-pUNcNxWYZSC3sSJ1bVnO');
+  
+  client.on("message", m => {
+    if (m.channel.id !== "795794001713823804") { //buraya o kanalın ID'si yazılacak.
+      return;
+    }
+    if (m.author.id == m.guild.member) return;
+    if (m.attachments.size < 1) {
+      const mesajjs = new Discord.RichEmbed()
+      .setColor("ffff00")
+      .setThumbnail(m.author.avatarURL)
+      .setTitle(`${m.author.tag}`)
+      .setDescription(`**Kişinin Yazdığı Mesaj** \`\`\` ${m.content} \`\`\``)
+      .setFooter(`Atlantic Code ™`);
+     chatlog.send(mesajjs)
+    }
+  });
 
 
 client.elevation = message => {

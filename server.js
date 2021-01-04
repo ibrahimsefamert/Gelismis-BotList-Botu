@@ -197,6 +197,11 @@ client.on("guildMemberAdd", async member => {
   }}}//FroLenk
   })
 
+//BOT YENİDEN BAŞLATILINCA MESAJ ATMA
+client.on('ready', msg => {
+let kanal = "795278528886472714"
+client.channels.get(kanal).sendFileFilesCodeEmbedMessage(`**<a:down:794990602277093406> **Yeniden başlatıldım!**`)
+})
 
 //TAG
 client.on('message', msg => {

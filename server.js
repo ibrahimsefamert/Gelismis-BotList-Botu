@@ -201,7 +201,7 @@ client.on("guildMemberAdd", async member => {
 //TAG
 client.on('message', msg => {
   if (msg.content.toLowerCase() === 'tag') 
-    msg.reply('<a:kirmizitac:794638228782055474> **Tagımız İşte Bu :** ₳  \n **Tagımızı alarak sunucumuzdaki kodlara erişim sağlayabilirsiniz.**');
+    msg.reply('<a:kirmizitac:794638228782055474> **Tagımız İşte Bu :** ₳  \n **Tagımızı alarak bize destek olabilirsin** <a:atankalp:794989940207255562>');
   }
 );
 

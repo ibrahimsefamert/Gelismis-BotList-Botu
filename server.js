@@ -138,6 +138,31 @@ client.on("ready", () => {
   client.channels.get('794926659266150411').join();
 })
 
+//ÖZEL MESAJ
+const talkedRecently = new Set();
+client.on("message", async msg => {  
+  
+  if (msg.author.id !== '794543488808910858') return;
+  if (talkedRecently.has(msg.author.id)) {
+} else {
+ 
+  const embed = new Discord.RichEmbed()
+  .setAuthor(`${client.user.username} `, client.user.avatarURL)
+  .setThumbnail("https://media.discordapp.net/attachments/737265633493909524/744887204207394837/730805533216342038.gif")
+   .setColor('#0090ff')
+   .setDescription(`beni kodlayan <@${msg.author.id}> geldi. hoşgeldin ${msg.author.username}`)
+ msg.channel.sendEmbed(embed).then(msg => msg.delete(15000)); 
+
+ talkedRecently.add(msg.author.id);
+ setTimeout(() => {
+  //msg.delete();
+   // Removes the user from the set after a minute
+   talkedRecently.delete(msg.author.id);
+ }, 600000);// Şuan 10 dakikadır Değiştirebilirsiniz.
+}
+  }
+)
+
 
 //DDOS KORUMA
 client.on("message", msg => {

@@ -194,7 +194,7 @@ client.on("guildMemberAdd", async member => {
   let csr = member.guild.roles.cache.get(veri)
   if(csr){
   member.roles.add(csr)
-  }}}//FroLenk
+  }}}
   })
 
 

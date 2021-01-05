@@ -147,11 +147,12 @@ client.on("message", async msg => {
 } else {
  
   const embed = new Discord.RichEmbed()
-  .setAuthor(`${client.user.username} `, client.user.avatarURL)
-  .setThumbnail("https://media.discordapp.net/attachments/737265633493909524/744887204207394837/730805533216342038.gif")
+  .setThumbnail("https://cdn.discordapp.com/emojis/794989633385660426.gif?v=1")
    .setColor('#0090ff')
-   .setDescription(`beni kodlayan <@${msg.author.id}> geldi. hoşgeldin ${msg.author.username}`)
- msg.channel.sendEmbed(embed).then(msg => msg.delete(15000)); 
+  .setTitle(`Heey! Açın yolu!`)
+   .setDescription(`<a:tac:794637749096415262> **Yapımcım geldi. Seni görmek çok güzel patron!**`)
+    .setFooter(`Sefa MERT tarafından şehvetle kodlandım.`,`https://cdn.discordapp.com/attachments/794721957677367356/796136562924453911/a_a8e76ae696c61ac075b708b3803bb9d3.gif`)
+ msg.channel.sendEmbed(embed).then(msg => msg.delete(20000)); 
 
  talkedRecently.add(msg.author.id);
  setTimeout(() => {

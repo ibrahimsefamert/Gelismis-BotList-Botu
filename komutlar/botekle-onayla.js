@@ -3,7 +3,6 @@ const Discord = require('discord.js');//Atlantic Code'ye Aittir.
 
 exports.run = function(client, message, args) {
   
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`<a:unlem:794638042484441170> **Bu komutu kullanmnız için yetkiniz yetmiyor.**`);
 	let botid = args[0]
   let sahip = args[1]
   let prefix = args[2]

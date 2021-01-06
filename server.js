@@ -138,31 +138,6 @@ client.on("ready", () => {
   client.channels.get('794926659266150411').join();
 })
 
-//ÖZEL MESAJ
-const talkedRecently = new Set();
-client.on("message", async msg => {  
-  
-  if (msg.author.id !== '794543488808910858') return;
-  if (talkedRecently.has(msg.author.id)) {
-} else {
- 
-  const embed = new Discord.RichEmbed()
-  .setThumbnail("https://cdn.discordapp.com/emojis/794989633385660426.gif?v=1")
-   .setColor('#0090ff')
-  .setTitle(`Heey! Açın yolu!`)
-   .setDescription(`<a:tac:794637749096415262> **Yapımcım geldi. Seni görmek çok güzel patron!**`)
-    .setFooter(`Sefa MERT tarafından şehvetle kodlandım.`,`https://cdn.discordapp.com/attachments/794721957677367356/796136562924453911/a_a8e76ae696c61ac075b708b3803bb9d3.gif`)
- msg.channel.sendEmbed(embed).then(msg => msg.delete(10000)); 
-
- talkedRecently.add(msg.author.id);
- setTimeout(() => {
-  //msg.delete();
-   // Removes the user from the set after a minute
-   talkedRecently.delete(msg.author.id);
- }, 400000);// Şuan 10 dakikadır Değiştirebilirsiniz.
-}
-  }
-)
 
 
 //DDOS KORUMA

@@ -7,11 +7,6 @@ app.get("/", (request, response) => {
   console.log("Botu açık tutmak için yeniden bağlandım!");
   response.sendStatus(200);
 });
-app.listen(8000);
-setInterval(() => {
-  http.get(``);//Buraya glitch linkinizi doğru şekilde giriniz. ve Botunuz 7/24 olacaktır!
-}, 280000)
-
 
 
 

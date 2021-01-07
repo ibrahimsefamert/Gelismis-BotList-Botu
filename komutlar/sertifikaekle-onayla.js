@@ -9,7 +9,7 @@ exports.run = function(client, message, args) {
   let kanal = "KANAL-İD" // onaylama reddetme kanalı
 	let log = "KANAL-İD" // bot eklendi / onaylandı / reddedildi kanalı
   
-	if (message.channel.id !== kanal) return message.channel.send(`**<a:unlem:794638042484441170> Bu komutu sadece <#${kanal}> kanalında kullanabilirsin.**`).then(msg => msg.delete(10000))
+	if (message.channel.id !== kanal) return message.channel.send(`**Bu komutu sadece <#${kanal}> kanalında kullanabilirsin.**`).then(msg => msg.delete(10000))
 	if (!botisim) return message.channel.send(`<a:unlem:794638042484441170> **Botun idsini yazmalısın.**`).then(msg => msg.delete(10000))
 
   message.delete()

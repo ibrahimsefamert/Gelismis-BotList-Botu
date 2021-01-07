@@ -6,9 +6,9 @@ exports.run = function(client, message, args) {
 	let botid = args[0]
 	let prefix = args[1]
   let onaylımı = args[2]
-  let basvuru = "795020393827794984"// başvurunun gideceği kanal
-	let kanal = "795015414379839488" // başvurunun yapılacağı kanal
-  let log = "795015559921008650" // bot eklendi / onaylandı / reddedildi kanalı
+  let basvuru = "KANAL-İD"// başvurunun gideceği kanal
+	let kanal = "KANAL-İD" // başvurunun yapılacağı kanal
+  let log = "KANAL-İD" // bot eklendi / onaylandı / reddedildi kanalı
 	
   if (message.channel.id !== kanal) return message.channel.send(`<a:unlem:794638042484441170> **Botun için sertifika talebini yalnızca <#${kanal}> kanalında yapabilirsin.**`).then(msg => msg.delete(10000))
 	if (message.channel.id == kanal) {

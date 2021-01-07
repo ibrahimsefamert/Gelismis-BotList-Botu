@@ -8,8 +8,8 @@ exports.run = function(client, message, args) {
   let sebep = args[1]
   let sebepp = args[2]
   let sebeppp = args[3]
-  let kanal = "795039723793285160" // onaylama reddetme kanalı
-	let log = "795015559921008650" // bot eklendi / onaylandı / reddedildi kanalı
+  let kanal = "KANAL-İD" // onaylama reddetme kanalı
+	let log = "KANAL-İD" // bot eklendi / onaylandı / reddedildi kanalı
 	
   if (message.channel.id !== kanal) return message.channel.send(`**<a:unlem:794638042484441170> Sistemimizde bulunan bir botu yalnızca <#${kanal}> kanalında atabilirsin.**`).then(msg => msg.delete(5000))
 	if (!botid) return message.channel.send(`<a:unlem:794638042484441170> **Botun idsini yazmalısın.**`).then(msg => msg.delete(10000))

@@ -6,9 +6,9 @@ exports.run = function(client, message, args) {
 	let botid = args[0]
   let sahip = args[1]
   let prefix = args[2]
-  let kanal = "795039723793285160" // onaylama reddetme kanalı
-	let log = "795015559921008650" // bot eklendi / onaylandı / reddedildi kanalı
-  let botsahipleri = "795019977173893130" // bot sahiplerinin gösterileceği kanal
+  let kanal = "KANAL-İD" // onaylama reddetme kanalı
+	let log = "KANAL-İD" // bot eklendi / onaylandı / reddedildi kanalı
+  let botsahipleri = "KANAL-İD" // bot sahiplerinin gösterileceği kanal
   
 	if (message.channel.id !== kanal) return message.channel.send(`**<a:unlem:794638042484441170> Başvuruda bulunulmuş bir botu yalnızca <#${kanal}> kanalında onaylayabilirsin.**`).then(msg => msg.delete(5000))
 	if (!botid) return message.channel.send(`<a:unlem:794638042484441170> **Botun idsini yazmalısın.**`).then(msg => msg.delete(5000))

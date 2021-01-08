@@ -1,22 +1,25 @@
-const Discord = require('discord.js');
+  const Discord = require('discord.js');
 
 
-exports.run = function(client, message, args) {
+  exports.run = function(client, message, args) {
   
-  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:unlem:794638042484441170> **Bu komutu kullanmnız için yetkiniz yetmiyor.**`);
-	let botid = args[0]
+  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`**Bu komutu kullanmnız için yetkiniz yetmiyor.**`);
+  
+  let sefamert = args[0]
   let sebep = args[1]
   let sebepp = args[2]
   let sebeppp = args[3]
-  let kanal = "KANAL-İD" // onaylama reddetme kanalı
-	let log = "KANAL-İD" // bot eklendi / onaylandı / reddedildi kanalı
+  let kanal = "KANAL-İD" // bot anaylama reddetme kanalı
+	let atlanticode = "KANAL-İD" // bot durum log kanalı
 	
-  if (message.channel.id !== kanal) return message.channel.send(`**<a:unlem:794638042484441170> Sistemimizde bulunan bir botu yalnızca <#${kanal}> kanalında atabilirsin.**`).then(msg => msg.delete(5000))
-	if (!botid) return message.channel.send(`<a:unlem:794638042484441170> **Botun idsini yazmalısın.**`).then(msg => msg.delete(10000))
-  if (!sebep) return message.channel.send(`<a:unlem:794638042484441170> **3 kelimelik sebep yazmalısın.**`).then(msg => msg.delete(10000))
-		client.channels.get(log).send(`<:cop:794637826829713469> <@${botid}> **adlı bot atıldı.** \n <a:up:794990618652442624> **Sebep :** **${sebep} ${sebepp} ${sebeppp}**. \n <a:hyq:794637845255421953> __**Botu Atan Yetkili :**__ ${message.author} - **${message.author.tag}**`);
-		message.channel.send(`<a:onay:794638422492315680> **Başarıyla botu attınız.**`).then(msg => msg.delete(10000))
-  	message.delete()
+  if (message.channel.id !== kanal) return message.channel.send(`**Sistemimizde bulunan bir botu yalnızca <#${kanal}> kanalında atabilirsin.**`).then(msg => msg.delete(5000))
+	if (!sefa) return message.channel.send(`**Botun idsini yazmalısın.**`).then(msg => msg.delete(10000))
+  if (!sebep) return message.channel.send(`**3 kelimelik sebep yazmalısın.**`).then(msg => msg.delete(10000))
+  
+  client.channels.get(atlanticode).send(`<@${sefamert}> **adlı bot atıldı.** \n **Sebep :** **${sebep} ${sebepp} ${sebeppp}**. \n  __**Botu Atan Yetkili :**__ ${message.author} - **${message.author.tag}**`);
+	message.channel.send(`**Başarıyla botu attınız.**`).then(msg => msg.delete(10000))
+  
+  message.delete()
 };
 
 exports.conf = {
@@ -28,6 +31,6 @@ exports.conf = {
 
 exports.help = {
   name: 'botat', 
-  description: "Sunucuya eklenen botu onaylar.",
-  usage: 'botonayla <bot ismi>'
+  description: "Sunucuya eklenmiş botu atar.",
+  usage: 'botat <bot-id> <sebep>'
 };6

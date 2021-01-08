@@ -1,29 +1,36 @@
-const Discord = require('discord.js');
+  const Discord = require('discord.js');
 
 
-exports.run = function(client, message, args) {
+  exports.run = function(client, message, args) {
 
-	let botid = args[0]
+	let sefamert = args[0]
 	let prefix = args[1]
   let onaylımı = args[2]
   let basvuru = "KANAL-İD"// başvurunun gideceği kanal
 	let kanal = "KANAL-İD" // başvurunun yapılacağı kanal
-  let log = "KANAL-İD" // bot eklendi / onaylandı / reddedildi kanalı
+  let atlanticode = "KANAL-İD" // bot eklendi / onaylandı / reddedildi kanalı
 	
-  if (message.channel.id !== kanal) return message.channel.send(`<a:unlem:794638042484441170> **Botun için sertifika talebini yalnızca <#${kanal}> kanalında yapabilirsin.**`).then(msg => msg.delete(10000))
+  if (message.channel.id !== kanal) return message.channel.send(`**Botun için sertifika talebini yalnızca <#${kanal}> kanalında yapabilirsin.**`).then(msg => msg.delete(10000))
 	if (message.channel.id == kanal) {
-  if (!botid) return message.channel.send(`<a:unlem:794638042484441170> **Botunun idsini yazmalısın.**`).then(msg => msg.delete(10000))
+  if (!sefamert) return message.channel.send(`**Botunun idsini yazmalısın.**`).then(msg => msg.delete(10000))
+  if (!onaylımı) return message.channel.send(`**Botunun DBL onaylımı?**`).then(msg => msg.delete(10000))
+  if (!prefix) return message.channel.send(`Botunun prefixini yazmalısın.**`).then(msg => msg.delete(10000))
+
+
   message.delete()
+
   const embed = new Discord.RichEmbed()
-  .setColor("ff0000")
-  .setDescription(`[Botu Test Sunucusuna Ekle](https://discordapp.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=0)`, true)
-  .setTitle("<a:mavi_siren:725103267696214079> Atlantic BotList | Sertifika Talep <a:kirmizisiren:738147932339044383>")
+  .setColor("RANDOM")
+  .setDescription(`[Botu Test İçin Ekle](https://discordapp.com/oauth2/authorize?client_id=${sefamert}&scope=bot&permissions=0)`, true)
+  .setTitle("Sefa MERT | Gelişmiş Discord BotList Botu")
   .addField("Bot Sahibi", message.author.tag )
   .addField("Bot Sahibi İd", message.author.id)
-  .addField("Bot ID", botid)
+  .addField("Bot ID", sefamert)
+
   client.channels.get(basvuru).send(embed)
-  client.channels.get(log).send(`<a:barcode_idle:768558340757782548>  ${message.author} **adlı kullanıcının** <@${botid}> **adlı botu için sertifika talebi alındı.**`)
-  message.channel.send(`<a:onay:794638422492315680> **Botunuz İçin Olan Sertifika Talebiniz Sıraya Alındı.**`).then(msg => msg.delete(5000))
+
+  client.channels.get(atlanticode).send(`<a:barcode_idle:768558340757782548>  ${message.author} **adlı kullanıcının** <@${sefamert}> **adlı botu için sertifika talebi alındı.**`)
+  message.channel.send(`**Botunuz İçin Olan Sertifika Talebiniz Sıraya Alındı.**`).then(msg => msg.delete(5000))
   }
 };
 
@@ -36,6 +43,6 @@ exports.conf = {
 
 exports.help = {
   name: 'sertifika', 
-  description: "Sunucuya bot eklemenizi sağlar.",
-  usage: 'botekle <botid> <prefix>'
+  description: "Botunuz için sertifika başvurusu yapar.",
+  usage: 'sertifika <botid> <dbl-onaylımı> <prefix>'
 };

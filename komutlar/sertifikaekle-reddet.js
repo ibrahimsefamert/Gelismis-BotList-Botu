@@ -2,37 +2,37 @@ const Discord = require('discord.js');
 
 
 exports.run = function(client, message, args) {
-  
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`**Bu komutu kullanmnız için yetkiniz yetmiyor.**`);
-	let botisim = args[0]
-  let sahip = args[1]
-  let sebep = args[2]
-  let sebep1 = args[3]
-  let sebep2 = args[4]
-  let sebep3 = args[5]
-  
-  let kanal = "KANAL-İD" // onaylama reddetme kanalı
-	let log = "KANAL-İD" // bot eklendi / onaylandı / reddedildi kanalı
-	
-  if (message.channel.id !== kanal) return message.channel.send(`**Bu komutu sadece <#${kanal}> kanalında kullanabilirsin.**`).then(msg => msg.delete(10000))
-	if (!botisim) return message.channel.send(`**Botun idsini yazmalısın.**`).then(msg => msg.delete(10000))
-      if (!sahip) return message.channel.send(`**Bot sahibinin idsini yazmalısın.**`).then(msg => msg.delete(10000))
-  if (!sebep) return message.channel.send(`**Sertifika talebini neden onaylamadığını yazmalısın.**`).then(msg => msg.delete(10000))
 
-  message.delete()
-		client.channels.get(log).send(`<@${sahip}> **Adlı Kişinin <@${botisim}> Adlı Botu İçin Olan Sertifika Talebi Reddedildi.** \n **Sebep : ${sebep} ${sebep1} ${sebep2} ${sebep3}** \n __*Sertifika Talebini Reddeden Yetkili:*__ ${message.author} `);
-		message.channel.send(`**Başarıyla Sertifika Talebini Reddettiniz.**`).then(msg => msg.delete(10000))
+if (!message.member.roles.has("BOT-KONTROL-ROL-İD")) return message.channel.send(`**Bu komutu kullanmnız için yetkiniz yetmiyor.**`);
+
+let sefamert = args[0]
+let sahip = args[1]
+let sebep = args[2]
+let sebepp = args[3]
+let sebeppp = args[4]
+let kanal = "KANAL-İD" // onaylama reddetme kanalı
+let atlanticode = "KANAL-İD" // bot eklendi / onaylandı / reddedildi kanalı
+
+if (message.channel.id !== kanal) return message.channel.send(`**Sertifika başvurusunda bulunulmuş bir botu yalnızca <#${kanal}> kanalında reddetebilirsin.**`).then(msg => msg.delete(5000))
+if (!sefamert) return message.channel.send(`**Botun idsini yazmalısın.**`).then(msg => msg.delete(5000))
+if (!sahip) return message.channel.send(`**Botun sahibinin idsini yazmalısın.**.`).then(msg => msg.delete(5000))
+if (!sebep) return message.channel.send(`**3 kelimelik sebep yazmalısın.**.`).then(msg => msg.delete(5000))
+message.delete()
+
+client.channels.get(atlanticode).send(`<@${sahip}> **adlı geliştiricinin; <@${sefamert}> adlı, __${sefamert}__ idli botu için yapılan sertifika başvurusu reddedildi.** \n **Sebep : ${sebep} ${sebepp} ${sebeppp}**\n  __**Sertifikayı Reddeden Yetkili :**__ ${message.author} - **${message.author.tag}**`)
+
+
+message.channel.send(`**Başarıyla bota yapılan sertifika başvurusunu reddettiniz.**`).then(msg => msg.delete(10000))
 };
-
 exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ['sertifika-reddet', 'sreddet'],
-  permLevel: 0
+enabled: true,
+guildOnly: false,
+aliases: ['sertfika-reddet'],
+permLevel: 0
 };
 
 exports.help = {
-  name: 'sertifikareddet', 
-  description: "Sert,f,ka talebini reddeder.",
-  usage: ''
-};
+name: 'sertifikareddet', 
+description: "Başvuru yapılan botu reddeder.",
+usage: 'botreddet <bot-id> <bot-sahip-id> <sebep>'
+};6

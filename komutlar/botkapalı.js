@@ -1,20 +1,23 @@
-const Discord = require('discord.js');
+  const Discord = require('discord.js');
 
 
-exports.run = function(client, message, args) {
+  exports.run = function(client, message, args) {
   
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`<a:unlem:794638042484441170> **Bu komutu kullanmnız için yetkiniz yetmiyor.**`);
-	let botid = args[0]
+  if (!message.member.roles.has("BOT-KONTROL-ROL-İD")) return message.channel.send(`**Bu komutu kullanmnız için yetkiniz yetmiyor.**`);
+
+	let sefamert = args[0]
   let zaman = args[1]
   let kanal = "KANAL-İD" // onaylama reddetme kanalı
-	let log = "KANAL-İD" // bot eklendi / onaylandı / reddedildi kanalı
+	let atlanticode = "KANAL-İD" // bot eklendi / onaylandı / reddedildi kanalı
 	
-  if (message.channel.id !== kanal) return message.channel.send(`**<a:unlem:794638042484441170> Bu komutu sadece <#${kanal}> kanalında kullanabilirsin.**`).then(msg => msg.delete(10000))
-  if (!botid) return message.channel.send(`<a:unlem:794638042484441170> **Botun idsini yazmalısın.**`).then(msg => msg.delete(10000))
-  if (!zaman) return message.channel.send(`<a:unlem:794638042484441170> **Gün sayısı belirtmelisin.**`).then(msg => msg.delete(10000))
+  if (message.channel.id !== kanal) return message.channel.send(`**Bu komutu sadece <#${kanal}> kanalında kullanabilirsin.**`).then(msg => msg.delete(10000))
+  if (!sefamert) return message.channel.send(`**Botun idsini yazmalısın.**`).then(msg => msg.delete(10000))
+  if (!zaman) return message.channel.send(`**Gün sayısı belirtmelisin.**`).then(msg => msg.delete(10000))
+ 
   message.delete()
-		client.channels.get(log).send(`<a:dikkat:794638320495755334> <@${botid}> **adlı bot kapalıdır.** **__${zaman}__** **günden fazla kapalı kalırsa atılacakdır!** \n <a:up:794990618652442624> **Botun geliştiricisinin durumu düzeltmesi önemle rica olunur.**  \n <a:hyq:794637845255421953> **Botla ilgili bir maruziyetiniz varsa <@794543488808910858>'e yazabilirsiniz.**`);
-		message.channel.send(`<a:onay:794638422492315680> **Başarıyla botu sahibine bildirdiniz.**`).then(msg => msg.delete(10000))
+
+	client.channels.get(atlanticode).send(`<@${sefamert}> **adlı bot kapalıdır.** **__${zaman}__** **günden fazla kapalı kalırsa atılacakdır!** \n **Botun geliştiricisinin durumu düzeltmesi önemle rica olunur.**  \n <a:hyq:794637845255421953> **Botla ilgili bir maruziyetiniz varsa <@794543488808910858>'e yazabilirsiniz.**`);
+	message.channel.send(`**Başarıyla botu sahibine bildirdiniz.**`).then(msg => msg.delete(10000))
 };
 
 exports.conf = {
@@ -26,6 +29,6 @@ exports.conf = {
 
 exports.help = {
   name: 'botkapalı', 
-  description: "Sunucuya eklenen botu reddeder.",
-  usage: 'botreddet <bot ismi> - <sebep>'
+  description: "Sunucuya eklenen botu uyarır.",
+  usage: 'botkapalı <bot-id> <gün>'
 };

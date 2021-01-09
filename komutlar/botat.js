@@ -13,7 +13,7 @@
 	let atlanticode = "KANAL-İD" // bot durum log kanalı
 	
   if (message.channel.id !== kanal) return message.channel.send(`**Sistemimizde bulunan bir botu yalnızca <#${kanal}> kanalında atabilirsin.**`).then(msg => msg.delete(5000))
-	if (!sefa) return message.channel.send(`**Botun idsini yazmalısın.**`).then(msg => msg.delete(10000))
+	if (!sefamert) return message.channel.send(`**Botun idsini yazmalısın.**`).then(msg => msg.delete(10000))
   if (!sebep) return message.channel.send(`**3 kelimelik sebep yazmalısın.**`).then(msg => msg.delete(10000))
   
   client.channels.get(atlanticode).send(`<@${sefamert}> **adlı bot atıldı.** \n **Sebep :** **${sebep} ${sebepp} ${sebeppp}**. \n  __**Botu Atan Yetkili :**__ ${message.author} - **${message.author.tag}**`);

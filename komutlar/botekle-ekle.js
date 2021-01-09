@@ -5,14 +5,15 @@
 
 	let sefamert = args[0]
 	let prefix = args[1]
-  let basvuru = "KANAL-İD"// başvurunun gideceği kanal
-  let kanal = "KANAL-İD" // bot anaylama reddetme kanalı
-	let atlanticode = "KANAL-İD" // bot durum log kanalı
+        let basvuru = "KANAL-İD"// başvurunun yapılacağı kanal
+        let basvurulog = "KANAL-İD" // başvurunun gideceği kanal
+        let kanal = "KANAL-İD" // bot anaylama reddetme kanalı
+        let atlanticode = "KANAL-İD" // bot durum log kanalı
 	
-  if (message.channel.id !== kanal) return message.channel.send(`**Botunuz için sadece <#${kanal}> kanalında başvuruda bulunabilirsiniz.**`).then(msg => msg.delete(10000))
-	if (message.channel.id == kanal) {
-  if (!sefamert) return message.channel.send(`**Botunun idsini yazmalısın.** \n **Örnek :** \`\`!botekle <bot-id> <bot-prefix>\`\``).then(msg => msg.delete(10000))
-  if (!prefix) return message.channel.send(`**Botunun prefixini yazmalısın.** \n **Örnek :** \`\`!botekle <bot-id> <bot-prefix>\`\``).then(msg => msg.delete(10000))
+  if (message.channel.id !== basvuru) return message.channel.send(`**ℹ ・ Botunuz için sadece <#${basvuru}> kanalında başvuruda bulunabilirsiniz.**`).then(msg => msg.delete(10000))
+	if (message.channel.id == basvuru) {
+  if (!sefamert) return message.channel.send(`**:exclamation: ・ Botunun idsini yazmalısın.** \n **Örnek :** \`\`!botekle <bot-id> <bot-prefix>\`\``).then(msg => msg.delete(10000))
+  if (!prefix) return message.channel.send(`**:exclamation: ・ Botunun prefixini yazmalısın.** \n **Örnek :** \`\`!botekle <bot-id> <bot-prefix>\`\``).then(msg => msg.delete(10000))
   
   message.delete()
   const embed = new Discord.RichEmbed()
@@ -24,10 +25,10 @@
   .addField("Botun İdsi", sefamert)
   .addField("Botun Prefixi",prefix)
 
-  client.channels.get(basvuru).send(embed)
-  client.channels.get(basvuru).send(`<@BOT-KONTROL-ROLÜ-İD>`)
+  client.channels.get(basvurulog).send(embed)
+  client.channels.get(basvurulog).send(`<@BOT-KONTROL-ROLÜ-İD>`)
   client.channels.get(atlanticode).send(`${message.author} **adlı geliştiricinin; <@${sefamert}> adlı, __${sefamert}__ idli botu inceleme sırasına alındı.** \n **Tahmini İncelenme Süresi :** __**1 Saat**__`)
-  message.channel.send(`**${message.author}, botunuz başarıyla inceleme sırasına alınmıştır. Bizimle çalıştığınız için teşekkürler.**`).then(msg => msg.delete(10000))
+  message.channel.send(`**:white_check_mark: ・ ${message.author}, botunuz başarıyla inceleme sırasına alınmıştır. Bizimle çalıştığınız için teşekkürler.**`).then(msg => msg.delete(10000))
   }
 };
 

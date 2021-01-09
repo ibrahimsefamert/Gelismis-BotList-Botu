@@ -10,7 +10,7 @@ module.exports = async client => {
   setInterval(async () => {
     var random = Math.floor(Math.random() * (atlanticode.length - 0 + 1) + 0);
   }, 12000);
-  client.user.setStatus("dnd");
+  client.user.setStatus("online");
 
 
 };
